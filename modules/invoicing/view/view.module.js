@@ -13,8 +13,8 @@ var common_1 = require('@angular/common');
 var material_1 = require('@angular/material');
 var flex_layout_1 = require('@angular/flex-layout');
 var forms_1 = require('@angular/forms');
-var pipes_1 = require('@app/pipes');
-var material_2 = require('@app/material');
+var pipes_1 = require('@sys/pipes');
+var material_2 = require('@sys/material');
 //import { ViewComponent }           from './view.component.js';
 var invoice_view_component_js_1 = require('./invoice-view/invoice-view.component.js');
 var ViewModule = (function () {
