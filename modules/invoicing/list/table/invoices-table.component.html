@@ -1,0 +1,37 @@
+<table class="data hover selectable printable" style="min-width: 563px;">
+	<thead><tr>
+			<th>Пл.</th>
+			<th>№</th>
+			<th>Дата</th>
+			<th>Клиент</th>
+			<th align="right">Сума<br><sup>без ДДС</sup></th>
+			<th align="right">Отстъпка</th>
+			<th align="right">ДДС</th>
+			<th align="right">Тотал</th>
+	</tr></thead>
+	<tbody>
+		<tr *ngFor="let invoice of invoices"
+			[class.selected]="selected && selected.data.number == invoice.data.number"
+			(click)="selectedChange.emit(invoice)"
+		>
+			<td align="center"><md-icon>start</md-icon></td>
+			<td align="center">{{ invoice.data.number }}</td>
+			<td align="center">{{ invoice.data.date     | date : 'dd.MM.yyyy' }}</td>
+			<td align="left">  {{ invoice.customer.company.name }}</td>
+			<td align="right"> {{ invoice.data.sum      | number : '.2-2' }}</td>
+			<td align="right"> {{ invoice.data.discount | number : '.2-2' }}</td>
+			<td align="right"> {{ invoice.data.vat      | number : '.2-2' }}</td>
+			<th align="right"> {{ invoice.data.total    | number : '.2-2' }}</th>
+		</tr>
+		<tr *ngIf="!invoices || invoices.length < 1">
+			<th colspan="8">Няма намерени записи</th>
+		</tr>
+	</tbody>
+	<tfoot><tr>
+		<td colspan="4"></td>
+		<td align="right">{{ getSum('sum')      | number : '.2-2' }}</td>
+		<td align="right">{{ getSum('discount') | number : '.2-2' }}</td>
+		<td align="right">{{ getSum('vat')      | number : '.2-2' }}</td>
+		<td align="right" background="dark">{{ getSum('total') | number : '.2-2' }}</td>
+	</tr></tfoot>
+</table>
