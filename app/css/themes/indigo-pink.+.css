@@ -1,0 +1,45 @@
+
+/*************************/
+/* predefine core COLORS */
+/*************************/
+
+body, .md-sidenav-container { 
+	background: #fff }
+
+[md-raised-button], [md-fab], [md-mini-fab] { 
+	background-color: #eee }
+
+md-sidenav { 
+	background: #f0f0f0!important; 
+	border-color:#ccc }
+md-sidenav[color="primary"] { 
+	background: #3f51b5!important;
+	color: #fff }
+md-sidenav[color="primary"] md-toolbar { 
+	color: #bbb }
+
+	
+/*******************/
+/* add new COLORS  */
+/*******************/
+
+button.active { 
+	background: rgba(0, 0, 0, 0.17) }
+
+table.hover tbody tr:hover td, table.hover tbody tr:hover th { 
+	background-color: #dadaff }
+	
+[color=smoke], .smoke { 
+	color: rgba(0,0,0,0.04) }
+
+[background=smoke], .smoke-back { 
+	background: rgba(0,0,0,0.04) }
+[background=transparent], .trnansparent-back, md-toolbar[color=transparent] {
+	background:transparent}
+[background=primary], .primary-back {
+	background:#3f51b5!important;
+	color:#fff!important }
+[background=dark], .dark-back {
+	background:#333;
+	color:#fff!important }
+	

@@ -1,0 +1,17 @@
+/** styling **/
+table.list { 
+	width: 100% }
+table.list th { 
+	width: 1em; 
+	font-weight: normal;
+	position:relative; top:4px;
+	padding-right: 0}
+table.list td { 
+	padding-left: 0.5em;
+	border-bottom: 1px dotted }
+
+/** colors **/
+table.list th { 
+	color: rgba(0,0,0,0.5) }
+table.list td { 
+	border-bottom-color: rgba(0,0,0,0.2) }

@@ -1,0 +1,51 @@
+<md-sidenav-layout>
+
+        <md-sidenav #leftbar color="primary" align="start" mode="side" opened="true" 
+				style="width:160px; height:100vh;" class="no-print">
+			<div style="overflow-y:auto; overflow-x:hidden">
+				<md-toolbar color="transparent" style="border-width:0">
+					<span routerLink="" style="cursor:pointer; color:#fff">
+						<md-icon style="font-size:1rem;width:19px">dashboard</md-icon> 
+						<label style="font-size:1.1rem; cursor:pointer;">Панел</label>
+					</span>
+				</md-toolbar>
+				<div *ngFor="let group of Config.Navigation">
+					<md-toolbar color="transparent" (click)="leftbarMenuController=group.key">
+						<md-icon>{{ group.icon }}</md-icon> {{ group.title }} 
+					</md-toolbar>
+					<div *ngIf="leftbarMenuController==group.key">
+						<button  md-button (click)="title=item.title"
+							*ngFor="let item of group.children"
+								routerLink="{{ item.path }}"
+								routerLinkActive="active"
+								title="{{ item.desc }}"
+						>{{ item.title }}</button>
+					</div>
+				</div>
+
+				<md-toolbar color="transparent" >
+					<button md-icon-button style="margin-top:-0.3em" title="Купи модул"><md-icon>extension</md-icon></button>
+					<button md-icon-button style="margin-top:-0.3em" title="Документация"><md-icon>explore</md-icon></button>
+					<button md-icon-button style="margin-top:-0.3em" title="Свържи се с нас"><md-icon>question_answer</md-icon></button>
+				</md-toolbar>
+
+			</div>
+		</md-sidenav>
+                
+        
+        <div style="min-width:750px;height:100vh">
+            <router-outlet></router-outlet>
+        </div>
+		
+		<md-sidenav #rightbar align="end" mode="side" style="width:300px; height:100vh" class="noprint">
+			<md-toolbar style="background:transparent">
+				<button md-icon-button (click)="app.layout.rightbarLocked=!app.layout.rightbarLocked;">
+					<md-icon *ngIf="!app.layout.rightbarLocked">lock_open</md-icon>
+					<md-icon *ngIf= "app.layout.rightbarLocked">lock</md-icon>
+				</button>
+			</md-toolbar>
+		
+		</md-sidenav>
+		
+</md-sidenav-layout>
+

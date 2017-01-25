@@ -1,0 +1,81 @@
+@media print{
+	* { background: #fff }
+	.no-print { display: none }
+	.padding { padding: 0; }
+}
+
+/************************/
+/* predefine core STYLE */
+/************************/
+
+body { 
+	font-weight: normal;
+	font-size:	13px;
+	letter-spacing: 0px;
+	font-family: Roboto, "Helvetica Neue", Helvetica, sans-serif; 
+	margin:0; 
+	padding:0 }
+
+input[type=date] { 
+	margin:-2px 0 -3px }
+
+.md-input-prefix md-icon, .md-input-suffix md-icon { 
+	font-size: 1.2em; 
+	margin: -0.4em 0.3em -0.4em 0; 
+	position: relative; 
+	top:0.3em }
+
+md-toolbar { 
+	min-height: 45px!important; 
+	padding: 0 1rem!important; }
+md-toolbar md-toolbar-row { 
+	height: 45px!important }
+md-toolbar label { 
+	font-size: 0.6em }
+
+button[md-button], button[md-raised-button] {
+	line-height: 1em!important;
+	height: 2em!important;
+	min-width: 42px!important }
+button[md-button] md-icon, button[md-raised-button] md-icon { 
+	font-size:1em!important; 
+	width:1em; 
+	line-height:1.7em!important; 
+	margin-right:0.5em }
+
+md-sidenav { 
+	box-shadow: none!important; 
+	border-width: 0 1px; 
+	border-style:solid }
+md-sidenav button[md-button] {
+	width:100%; 
+	text-align:left; 
+	padding-left: 32px }
+md-sidenav[color="primary"] { 
+	border-width:0 }
+md-sidenav[color="primary"] md-toolbar { 
+	padding-left:8px !important;
+	margin-top:8px;
+	border-top:1px solid;
+	cursor:pointer }
+md-sidenav[color="primary"] md-toolbar md-icon {
+	font-size:1rem;
+	padding-top:0.5rem }
+
+
+/*******************/
+/* add new STYLING */
+/*******************/
+
+.padding { 
+	padding: 0.5rem 1rem; 
+	box-sizing: border-box }
+
+md-icon.prefix, md-icon.suffix { 
+	font-size: 1.3em; 
+	position: relative; 
+	top:0.3em }
+md-icon.prefix svg, md-icon.suffix svg { 
+	position:relative; 
+	top:0.2em; 
+	width: 1em }

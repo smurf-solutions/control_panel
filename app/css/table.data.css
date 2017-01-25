@@ -1,0 +1,46 @@
+/****** styling ******/
+table.data { 
+	width: 100%; 
+	border-collapse: collapse }
+
+table.data tbody tr:first-child th, table.data tbody tr:first-child td,
+table.data tfoot tr:first-child th, table.data tfoot tr:first-child td {
+	border-top: 1px solid }
+table.data tbody tr:last-child th, table.data tbody tr:last-child td,
+table.data thead tr:last-child th, table.data thead tr:last-child td { 
+	border-bottom: 1px solid }
+	
+table.data thead th sup { 
+	font-weight: normal }
+
+table.data tbody th, table.data tbody td { 
+	border-style: solid;
+	border-width: 1px 0 0 0 }
+
+table.data tbody md-icon { 
+	cursor: pointer; 
+	padding: 1px; 
+	border-width: 1px; border-style: solid; 
+	font-size: 1.3em; 
+	width:1em; 
+	height:1em }
+table.data tbody md-icon[svgIcon]{
+	width: 16px; 
+	height: 16px }
+
+table.data.selectable { 
+	cursor: pointer }
+
+/****** colors ******/
+table.data tbody th, table.data tbody td { 
+	border-color: #ddd; 
+	background: #fff }
+table.data tbody md-icon { 
+	border-color: transparent }
+table.data tbody md-icon:hover { 
+	border-color: #aaa }
+
+table.data.selectable tr.selected td, table.data.selectable tr.selected th { 
+	background: #ddd!important }
+
+/**/
