@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var InvoicesTableComponent = (function () {
     function InvoicesTableComponent() {
         this.selectedChange = new core_1.EventEmitter();
@@ -18,19 +18,18 @@ var InvoicesTableComponent = (function () {
             return;
         return this.invoices.reduce(function (a, b) { return a + parseFloat(b.data[key]); }, 0);
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], InvoicesTableComponent.prototype, "selectedChange", void 0);
-    InvoicesTableComponent = __decorate([
-        core_1.Component({
-            selector: 'invoices-table',
-            moduleId: module.id,
-            templateUrl: 'invoices-table.component.html',
-            inputs: ['invoices', 'selected']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], InvoicesTableComponent);
     return InvoicesTableComponent;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], InvoicesTableComponent.prototype, "selectedChange", void 0);
+InvoicesTableComponent = __decorate([
+    core_1.Component({
+        selector: 'invoices-table',
+        moduleId: module.id,
+        templateUrl: 'invoices-table.component.html',
+        inputs: ['invoices', 'selected']
+    })
+], InvoicesTableComponent);
 exports.InvoicesTableComponent = InvoicesTableComponent;

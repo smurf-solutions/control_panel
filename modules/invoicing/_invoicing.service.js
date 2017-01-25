@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var service_1 = require('@app/service');
-var invoicing_config_js_1 = require('./invoicing.config.js');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var service_1 = require("@app/service");
+var invoicing_config_js_1 = require("./invoicing.config.js");
 var InvoicingService = (function () {
     function InvoicingService(http, service) {
         this.http = http;
@@ -87,11 +87,11 @@ var InvoicingService = (function () {
         }
         return ret;
     };
-    InvoicingService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, (typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object])
-    ], InvoicingService);
     return InvoicingService;
-    var _a;
 }());
+InvoicingService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http, typeof (_a = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _a || Object])
+], InvoicingService);
 exports.InvoicingService = InvoicingService;
+var _a;

@@ -5,12 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = require('@angular/core');
-var company_config_js_1 = require('../company.config.js');
-var AppService = (function () {
+var core_1 = require("@angular/core");
+var company_config_js_1 = require("../company.config.js");
+var AppService = AppService_1 = (function () {
     function AppService() {
         this.company = company_config_js_1.CompanyConfig;
         this.storage = {};
@@ -28,7 +25,7 @@ var AppService = (function () {
             exclude = exclude || [];
             var methods = Object.keys(obj);
             methods.forEach(function (method) {
-                if (!(obj[method] instanceof AppService))
+                if (!(obj[method] instanceof AppService_1))
                     if (exclude.indexOf(method) == -1)
                         _this.storage[key][method] = obj[method];
             });
@@ -41,10 +38,10 @@ var AppService = (function () {
             methods.forEach(function (method) { return obj[method] = _this.storage[key][method]; });
         }
     };
-    AppService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], AppService);
     return AppService;
 }());
+AppService = AppService_1 = __decorate([
+    core_1.Injectable()
+], AppService);
 exports.AppService = AppService;
+var AppService_1;

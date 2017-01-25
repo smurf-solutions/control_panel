@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var material_1 = require('@angular/material');
-var service_1 = require('@app/service');
-var InvoicingConfig = require('./../invoicing.config.js');
-var ListComponent = (function () {
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var material_1 = require("@angular/material");
+var service_1 = require("@app/service");
+var InvoicingConfig = require("./../invoicing.config.js");
+var ListComponent = ListComponent_1 = (function () {
     function ListComponent(app, http, dialog) {
         this.app = app;
         this.http = http;
@@ -23,7 +23,7 @@ var ListComponent = (function () {
         this.exportList = {};
     }
     ListComponent.prototype.newInvoice = function () {
-        var dialogRef = this.dialog.open(ListComponent);
+        var dialogRef = this.dialog.open(ListComponent_1);
         if (this.selected) {
             dialogRef.componentInstance.invoice = this.selected.data;
             dialogRef.componentInstance.customer = this.selected.customer;
@@ -81,19 +81,20 @@ var ListComponent = (function () {
         if (this.invoicing_bar)
             this.invoicing_bar.open();
     };
-    __decorate([
-        core_1.ViewChild('invoicing_bar'), 
-        __metadata('design:type', Object)
-    ], ListComponent.prototype, "invoicing_bar", void 0);
-    ListComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            styleUrls: ['list.component.css'],
-            templateUrl: 'list.component.html'
-        }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object, http_1.Http, material_1.MdDialog])
-    ], ListComponent);
     return ListComponent;
-    var _a;
 }());
+__decorate([
+    core_1.ViewChild('invoicing_bar'),
+    __metadata("design:type", Object)
+], ListComponent.prototype, "invoicing_bar", void 0);
+ListComponent = ListComponent_1 = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        styleUrls: ['list.component.css'],
+        templateUrl: 'list.component.html'
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _a || Object, http_1.Http,
+        material_1.MdDialog])
+], ListComponent);
 exports.ListComponent = ListComponent;
+var ListComponent_1, _a;

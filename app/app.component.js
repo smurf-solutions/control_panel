@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
-var service_1 = require('@app/service');
-var AppConfig = require('./app.config.js');
+var core_1 = require("@angular/core");
+var core_2 = require("@angular/core");
+var service_1 = require("@app/service");
+var AppConfig = require("./app.config.js");
 //import { CompanyConfig } from '../company.config.js';
 var AppComponent = (function () {
     function AppComponent(app) {
@@ -63,25 +63,25 @@ var AppComponent = (function () {
             this.openrightbar();
         }
     };
-    __decorate([
-        core_2.ViewChild('leftbar'), 
-        __metadata('design:type', (typeof (_a = typeof core_2.MdSidenav !== 'undefined' && core_2.MdSidenav) === 'function' && _a) || Object)
-    ], AppComponent.prototype, "leftbar", void 0);
-    __decorate([
-        core_2.ViewChild('rightbar'), 
-        __metadata('design:type', (typeof (_b = typeof core_2.MdSidenav !== 'undefined' && core_2.MdSidenav) === 'function' && _b) || Object)
-    ], AppComponent.prototype, "rightbar", void 0);
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app',
-            styleUrls: AppConfig.Styles,
-            moduleId: module.id,
-            encapsulation: core_1.ViewEncapsulation.None,
-            templateUrl: 'app.component.html',
-        }), 
-        __metadata('design:paramtypes', [(typeof (_c = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _c) || Object])
-    ], AppComponent);
     return AppComponent;
-    var _a, _b, _c;
 }());
+__decorate([
+    core_2.ViewChild('leftbar'),
+    __metadata("design:type", typeof (_a = typeof core_2.MdSidenav !== "undefined" && core_2.MdSidenav) === "function" && _a || Object)
+], AppComponent.prototype, "leftbar", void 0);
+__decorate([
+    core_2.ViewChild('rightbar'),
+    __metadata("design:type", typeof (_b = typeof core_2.MdSidenav !== "undefined" && core_2.MdSidenav) === "function" && _b || Object)
+], AppComponent.prototype, "rightbar", void 0);
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'app',
+        styleUrls: AppConfig.Styles,
+        moduleId: module.id,
+        encapsulation: core_1.ViewEncapsulation.None,
+        templateUrl: 'app.component.html',
+    }),
+    __metadata("design:paramtypes", [typeof (_c = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _c || Object])
+], AppComponent);
 exports.AppComponent = AppComponent;
+var _a, _b, _c;
