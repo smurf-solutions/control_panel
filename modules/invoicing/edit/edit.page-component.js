@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var service_1 = require('@app/service');
+var service_1 = require('@sys/service');
 var EditPageComponent = (function () {
     function EditPageComponent(app) {
         this.app = app;
@@ -26,7 +26,7 @@ var EditPageComponent = (function () {
             moduleId: module.id,
             templateUrl: 'edit.page-component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.SysService !== 'undefined' && service_1.SysService) === 'function' && _a) || Object])
     ], EditPageComponent);
     return EditPageComponent;
     var _a;
