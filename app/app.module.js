@@ -14,9 +14,9 @@ var material_1 = require("@angular/material");
 var router_1 = require("@angular/router");
 var flex_layout_1 = require("@angular/flex-layout");
 var not_found_1 = require("@sys/not-found");
+var service_1 = require("@sys/service");
 var AppConfig = require("./app.config.js");
 var app_component_js_1 = require("./app.component.js");
-var app_service_js_1 = require("./app.service.js");
 var AppModule = (function () {
     function AppModule(mdIconRegistry) {
         mdIconRegistry.addSvgIconSetInNamespace('icons', 'svg/icons.svg');
@@ -25,15 +25,12 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        providers: [app_service_js_1.AppService],
+        providers: [service_1.SysService],
         imports: [
             platform_browser_1.BrowserModule,
             material_1.MaterialModule.forRoot(),
             flex_layout_1.FlexLayoutModule.forRoot(),
             router_1.RouterModule.forRoot(AppConfig.Routing.concat([
-                //{path:'Login', loadChildren: 'lib/login/login.ts#LoginModule'},
-                //{ path: 'Login', component: LoginComponent },
-                //{ path: 'login', component: LoginComponent },
                 { path: '**', component: not_found_1.NotFoundComponent }
             ]), { useHash: true }),
             not_found_1.NotFoundModule
