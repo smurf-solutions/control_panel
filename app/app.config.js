@@ -7,7 +7,7 @@ exports.Navigation = [
         children: [
             { title: 'Фактури',
                 desc: 'Преглед и редакция на Фактури',
-                path: 'Invoicing',
+                path: 'Invoicing'
             },
             { title: 'Клиенти',
                 desc: 'Управление на клиентите',
@@ -19,7 +19,7 @@ exports.Navigation = [
             },
             { title: 'Разходи*',
                 desc: 'Разходни Фактури',
-                path: 'Expences/Invoices',
+                path: 'Expences/Invoices'
             },
             { title: 'Доставчици*',
                 desc: '',
