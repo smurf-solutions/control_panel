@@ -8,19 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var material_1 = require("@angular/material");
+var core_1 = require('@angular/core');
+var material_1 = require('@angular/material');
 var InvoiceDialogComponent = (function () {
     function InvoiceDialogComponent(dialogRef) {
         this.dialogRef = dialogRef;
     }
+    InvoiceDialogComponent = __decorate([
+        core_1.Component({
+            selector: 'invoice-dialog',
+            template: "\n  <h1 md-dialog-title>{{ title }}</h1>\n\t  {{ message }}\n  <md-dialog-actions>\n    <button (click)=\"dialogRef.close('yes')\">Yes</button>\n    <button md-dialog-close>No</button>\n  </md-dialog-actions>\n  "
+        }), 
+        __metadata('design:paramtypes', [material_1.MdDialogRef])
+    ], InvoiceDialogComponent);
     return InvoiceDialogComponent;
 }());
-InvoiceDialogComponent = __decorate([
-    core_1.Component({
-        selector: 'invoice-dialog',
-        template: "\n  <h1 md-dialog-title>{{ title }}</h1>\n\t  {{ message }}\n  <md-dialog-actions>\n    <button (click)=\"dialogRef.close('yes')\">Yes</button>\n    <button md-dialog-close>No</button>\n  </md-dialog-actions>\n  "
-    }),
-    __metadata("design:paramtypes", [material_1.MdDialogRef])
-], InvoiceDialogComponent);
 exports.InvoiceDialogComponent = InvoiceDialogComponent;

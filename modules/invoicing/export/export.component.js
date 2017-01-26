@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var service_1 = require("@app/service");
+var core_1 = require('@angular/core');
+var service_1 = require('@app/service');
 var ExportComponent = (function () {
     function ExportComponent(app) {
         this.app = app;
@@ -56,16 +56,15 @@ var ExportComponent = (function () {
             document.body.removeChild(elem);
         }
     };
+    ExportComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            styleUrls: ['export.component.css'],
+            templateUrl: 'export.component.html'
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object])
+    ], ExportComponent);
     return ExportComponent;
+    var _a;
 }());
-ExportComponent = __decorate([
-    core_1.Component({
-        //selector: 'export-invoices',
-        moduleId: module.id,
-        styleUrls: ['export.component.css'],
-        templateUrl: 'export.component.html'
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _a || Object])
-], ExportComponent);
 exports.ExportComponent = ExportComponent;
-var _a;

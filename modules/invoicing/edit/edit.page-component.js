@@ -10,26 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var service_1 = require("@app/service");
-var EditComponent = (function () {
-    function EditComponent(app) {
+var EditPageComponent = (function () {
+    function EditPageComponent(app) {
         this.app = app;
     }
-    EditComponent.prototype.ngOnInit = function () {
+    EditPageComponent.prototype.ngOnInit = function () {
         this.app.layout.store();
         this.app.layout.leftbar.open();
     };
-    EditComponent.prototype.ngOnDestroy = function () {
+    EditPageComponent.prototype.ngOnDestroy = function () {
         this.app.layout.restore();
     };
-    return EditComponent;
+    return EditPageComponent;
 }());
-EditComponent = __decorate([
+EditPageComponent = __decorate([
     core_1.Component({
-        //selector: 'edit-component',
         moduleId: module.id,
-        templateUrl: 'edit.component.html'
+        templateUrl: 'edit.page-component.html'
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _a || Object])
-], EditComponent);
-exports.EditComponent = EditComponent;
+], EditPageComponent);
+exports.EditPageComponent = EditPageComponent;
 var _a;

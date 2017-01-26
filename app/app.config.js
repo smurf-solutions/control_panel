@@ -79,7 +79,6 @@ exports.Navigation = [
     }
 ];
 exports.Routing = [
-    //{ path: '', redirectTo: 'Invoicing/Print', pathMatch: 'full' },
     { path: 'Invoicing', loadChildren: 'modules/invoicing/invoicing.module.js#InvoicingModule' },
     { path: 'Contragents/Customers', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
     { path: 'Contragents/Supplyers', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },

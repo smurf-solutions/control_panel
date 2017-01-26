@@ -8,17 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var material_1 = require("@angular/material");
-var core_1 = require("@angular/core");
-var invoice_dialog_component_js_1 = require("./invoice-dialog.component.js");
+var material_1 = require('@angular/material');
+var core_1 = require('@angular/core');
+var invoice_dialog_component_js_1 = require('./invoice-dialog.component.js');
 var DialogsService = (function () {
     function DialogsService(dialog) {
         this.dialog = dialog;
     }
-    //public confirm(title: string, message: string, viewContainerRef: ViewContainerRef): Observable<boolean> {
     DialogsService.prototype.confirm = function (title, message, viewContainerRef) {
         var dialogRef;
-        var config = {}; //new MdDialogConfig();
+        var config = {};
         config.viewContainerRef = viewContainerRef;
         config.position = { top: '10px' };
         dialogRef = this.dialog.open(invoice_dialog_component_js_1.InvoiceDialogComponent, config);
@@ -26,34 +25,34 @@ var DialogsService = (function () {
         dialogRef.componentInstance.message = message;
         return dialogRef.afterClosed();
     };
+    DialogsService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [material_1.MdDialog])
+    ], DialogsService);
     return DialogsService;
 }());
-DialogsService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [material_1.MdDialog])
-], DialogsService);
 exports.DialogsService = DialogsService;
-/*****************************************/
-var core_2 = require("@angular/core");
-var material_2 = require("@angular/material");
+var core_2 = require('@angular/core');
+var material_2 = require('@angular/material');
 var DialogsModule = (function () {
     function DialogsModule() {
     }
+    DialogsModule = __decorate([
+        core_2.NgModule({
+            providers: [DialogsService],
+            imports: [material_2.MaterialModule.forRoot()],
+            exports: [
+                invoice_dialog_component_js_1.InvoiceDialogComponent,
+            ],
+            declarations: [
+                invoice_dialog_component_js_1.InvoiceDialogComponent,
+            ],
+            entryComponents: [
+                invoice_dialog_component_js_1.InvoiceDialogComponent,
+            ]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], DialogsModule);
     return DialogsModule;
 }());
-DialogsModule = __decorate([
-    core_2.NgModule({
-        providers: [DialogsService],
-        imports: [material_2.MaterialModule.forRoot()],
-        exports: [
-            invoice_dialog_component_js_1.InvoiceDialogComponent,
-        ],
-        declarations: [
-            invoice_dialog_component_js_1.InvoiceDialogComponent,
-        ],
-        entryComponents: [
-            invoice_dialog_component_js_1.InvoiceDialogComponent,
-        ]
-    })
-], DialogsModule);
 exports.DialogsModule = DialogsModule;

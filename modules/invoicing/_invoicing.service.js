@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-var service_1 = require("@app/service");
-var invoicing_config_js_1 = require("./invoicing.config.js");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var service_1 = require('@app/service');
+var invoicing_config_js_1 = require('./invoicing.config.js');
 var InvoicingService = (function () {
     function InvoicingService(http, service) {
         this.http = http;
@@ -20,15 +20,6 @@ var InvoicingService = (function () {
         if (!this.service.invoicing) {
             this.service.invoicing = {};
         }
-        /*
-        if( !this.service.invoicing.invoices ){
-             this.service.invoicing.invoices = [];
-             this.http
-                .get( 'collections/invoices/'+this.Config.getList )
-                .map( res=>res.json() )
-                .subscribe( res => this.service.invoicing.invoices = res.invoices );
-        }
-        */
     }
     InvoicingService.prototype.ngOnDestroy = function () {
         alert("destroy");
@@ -47,28 +38,10 @@ var InvoicingService = (function () {
             return '';
         return this.service.invoicing.filter;
     };
-    /*setInvoices( invoices ) {
-        this.service.invoicing.invoices = invoices;
-    }*/
     InvoicingService.prototype.getInvoices = function () {
         var filter = this.getFilter();
         var reg = new RegExp(filter, 'i');
         return this.service.invoicing.invoices;
-        /*
-        .filter( function( invoice ) {
-            if(!filter) return true;
-            
-            return invoice.data.number.indexOf( filter )
-                //|| invoice.data.sum.indexOf( filter )
-                //|| invoice.data.total.indexOf( filter )
-                //|| invoice.data.vat.indexOf( filter )
-                || invoice.customer.company.name.match( reg );
-            
-            
-            //return invoice.data.number.indexOf(filter) > -1
-            //		|| invoice.customer.company.name.toLowerCase().indexOf(filter) > -1;
-            
-        } );*/
     };
     InvoicingService.prototype.selectInvoice = function (invoice) {
         this.service.invoicing.selected = invoice;
@@ -87,11 +60,11 @@ var InvoicingService = (function () {
         }
         return ret;
     };
+    InvoicingService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http, (typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object])
+    ], InvoicingService);
     return InvoicingService;
+    var _a;
 }());
-InvoicingService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, typeof (_a = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _a || Object])
-], InvoicingService);
 exports.InvoicingService = InvoicingService;
-var _a;
