@@ -10,9 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var core_2 = require("@angular/core");
-var service_1 = require("@app/service");
+var service_1 = require("@sys/service");
 var AppConfig = require("./app.config.js");
-//import { CompanyConfig } from '../company.config.js';
 var AppComponent = (function () {
     function AppComponent(app) {
         this.app = app;
@@ -22,9 +21,6 @@ var AppComponent = (function () {
         this.state = {};
         this.app.layout = this;
     }
-    /**
-    Store and Restore Application state
-    */
     AppComponent.prototype.store = function () {
         this.state.leftbar = {
             opened: this.leftbar.opened
@@ -36,9 +32,6 @@ var AppComponent = (function () {
         else
             this.leftbar.close();
     };
-    /**
-    Left and Right bars
-    */
     AppComponent.prototype.toggleLeftbar = function () {
         if (this.leftbar.opened) {
             this.leftbar.close();
@@ -81,7 +74,7 @@ AppComponent = __decorate([
         encapsulation: core_1.ViewEncapsulation.None,
         templateUrl: 'app.component.html',
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof service_1.SysService !== "undefined" && service_1.SysService) === "function" && _c || Object])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 var _a, _b, _c;
