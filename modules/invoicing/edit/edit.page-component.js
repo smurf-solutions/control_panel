@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var service_1 = require("@app/service");
+var core_1 = require('@angular/core');
+var service_1 = require('@app/service');
 var EditPageComponent = (function () {
     function EditPageComponent(app) {
         this.app = app;
@@ -21,14 +21,14 @@ var EditPageComponent = (function () {
     EditPageComponent.prototype.ngOnDestroy = function () {
         this.app.layout.restore();
     };
+    EditPageComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            templateUrl: 'edit.page-component.html'
+        }), 
+        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object])
+    ], EditPageComponent);
     return EditPageComponent;
+    var _a;
 }());
-EditPageComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        templateUrl: 'edit.page-component.html'
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof service_1.AppService !== "undefined" && service_1.AppService) === "function" && _a || Object])
-], EditPageComponent);
 exports.EditPageComponent = EditPageComponent;
-var _a;

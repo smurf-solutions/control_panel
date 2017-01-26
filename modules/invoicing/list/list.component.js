@@ -58,7 +58,7 @@ var ListComponent = (function () {
     __decorate([
         core_1.ViewChild('invoicing_bar'), 
         __metadata('design:type', Object)
-    ], ListComponent.prototype, "invoicing_bar");
+    ], ListComponent.prototype, "invoicing_bar", void 0);
     ListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
