@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var material_1 = require('@angular/material');
-var service_1 = require('@app/service');
+var service_1 = require('@sys/service');
 var InvoicingConfig = require('./../invoicing.config.js');
 var ListComponent = (function () {
     function ListComponent(app, http, dialog) {
@@ -58,14 +58,14 @@ var ListComponent = (function () {
     __decorate([
         core_1.ViewChild('invoicing_bar'), 
         __metadata('design:type', Object)
-    ], ListComponent.prototype, "invoicing_bar", void 0);
+    ], ListComponent.prototype, "invoicing_bar");
     ListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             styleUrls: ['list.component.css'],
             templateUrl: 'list.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object, http_1.Http, material_1.MdDialog])
+        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.SysService !== 'undefined' && service_1.SysService) === 'function' && _a) || Object, http_1.Http, material_1.MdDialog])
     ], ListComponent);
     return ListComponent;
     var _a;
