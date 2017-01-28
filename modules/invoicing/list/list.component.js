@@ -9,26 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
 var material_1 = require('@angular/material');
-var service_1 = require('@sys/service');
+var services_1 = require('@sys/services');
+var services_2 = require('@sys/services');
 var InvoicingConfig = require('./../invoicing.config.js');
+var edit_modal_component_js_1 = require('./../edit/edit-modal.component.js');
 var ListComponent = (function () {
-    function ListComponent(app, http, dialog) {
+    function ListComponent(app, collections, dialog) {
         this.app = app;
-        this.http = http;
+        this.collections = collections;
         this.dialog = dialog;
-        this.collectionOperations = InvoicingConfig.collectionOperations;
+        this.dialogConfig = { disableClose: false,
+            width: '600px', height: '', position: { top: '', bottom: '', left: '', right: '' }
+        };
         this.listInfo = InvoicingConfig.listConfig;
         this.exportList = {};
     }
-    ListComponent.prototype.newInvoice = function () {
-        var dialogRef = this.dialog.open(ListComponent);
-        if (this.selected) {
-            dialogRef.componentInstance.invoice = this.selected.data;
-            dialogRef.componentInstance.customer = this.selected.customer;
-            dialogRef.componentInstance.products = this.selected.products;
-            dialogRef.componentInstance.payment = this.selected.payment;
+    ListComponent.prototype.editInvoiceModal = function (invoice) {
+        var dialogRef = this.dialog.open(edit_modal_component_js_1.EditModalComponent, this.dialogConfig);
+        if (invoice) {
+            dialogRef.componentInstance.title = 'Редакция на фактура';
+            dialogRef.componentInstance.invoice = invoice.data;
+            dialogRef.componentInstance.customer = invoice.customer;
+            dialogRef.componentInstance.payment = invoice.payment;
+        }
+        else {
+            dialogRef.componentInstance.title = 'Нова фактура';
+            dialogRef.componentInstance.invoice = {};
+            dialogRef.componentInstance.customer = { company: {}, address: {}, contacts: {} };
+            dialogRef.componentInstance.payment = {};
         }
     };
     ListComponent.prototype.ngOnInit = function () {
@@ -41,9 +50,8 @@ var ListComponent = (function () {
     ListComponent.prototype.load = function () {
         var _this = this;
         this.selected = null;
-        this.http
-            .get('collections/invoices/' + this.collectionOperations.getList)
-            .map(function (res) { return res.json(); })
+        this.collections
+            .get('invoices')
             .subscribe(function (res) { return _this.invoices = res.invoices; });
     };
     ListComponent.prototype.getPagesNum = function () {
@@ -58,16 +66,16 @@ var ListComponent = (function () {
     __decorate([
         core_1.ViewChild('invoicing_bar'), 
         __metadata('design:type', Object)
-    ], ListComponent.prototype, "invoicing_bar", void 0);
+    ], ListComponent.prototype, "invoicing_bar");
     ListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             styleUrls: ['list.component.css'],
             templateUrl: 'list.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.SysService !== 'undefined' && service_1.SysService) === 'function' && _a) || Object, http_1.Http, material_1.MdDialog])
+        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object, (typeof (_b = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _b) || Object, material_1.MdDialog])
     ], ListComponent);
     return ListComponent;
-    var _a;
+    var _a, _b;
 }());
 exports.ListComponent = ListComponent;

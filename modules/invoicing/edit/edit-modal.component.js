@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var material_1 = require('@angular/material');
-var InvoiceDialogComponent = (function () {
-    function InvoiceDialogComponent(dialogRef) {
-        this.dialogRef = dialogRef;
+var EditModalComponent = (function () {
+    function EditModalComponent() {
+        this.title = "Фактура";
+        this.invoice = {};
+        this.customer = {};
+        this.payment = {};
     }
-    InvoiceDialogComponent = __decorate([
+    EditModalComponent = __decorate([
         core_1.Component({
-            selector: 'invoice-dialog',
-            template: "\n  <h1 md-dialog-title>{{ title }}</h1>\n\t  {{ message }}\n  <md-dialog-actions>\n    <button (click)=\"dialogRef.close('yes')\">Yes</button>\n    <button md-dialog-close>No</button>\n  </md-dialog-actions>\n  "
+            moduleId: module.id,
+            templateUrl: 'edit-modal.component.html'
         }), 
-        __metadata('design:paramtypes', [material_1.MdDialogRef])
-    ], InvoiceDialogComponent);
-    return InvoiceDialogComponent;
+        __metadata('design:paramtypes', [])
+    ], EditModalComponent);
+    return EditModalComponent;
 }());
-exports.InvoiceDialogComponent = InvoiceDialogComponent;
+exports.EditModalComponent = EditModalComponent;

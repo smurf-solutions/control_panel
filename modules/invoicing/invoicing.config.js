@@ -1,7 +1,4 @@
 "use strict";
-exports.collectionOperations = {
-    getList: 'getInvoices.json',
-};
 exports.listConfig = {
     page: 1,
     perPage: 10,

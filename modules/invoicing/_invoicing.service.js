@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var service_1 = require('@app/service');
+var services_1 = require('@app/services');
 var invoicing_config_js_1 = require('./invoicing.config.js');
 var InvoicingService = (function () {
     function InvoicingService(http, service) {
@@ -62,7 +62,7 @@ var InvoicingService = (function () {
     };
     InvoicingService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, (typeof (_a = typeof service_1.AppService !== 'undefined' && service_1.AppService) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [http_1.Http, (typeof (_a = typeof services_1.AppService !== 'undefined' && services_1.AppService) === 'function' && _a) || Object])
     ], InvoicingService);
     return InvoicingService;
     var _a;

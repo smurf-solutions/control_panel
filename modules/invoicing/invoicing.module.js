@@ -29,7 +29,7 @@ var InvoicingModule = (function () {
                 edit_module_js_1.EditModule,
                 settings_module_js_1.SettingsModule,
                 export_module_js_1.ExportModule
-            ],
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], InvoicingModule);

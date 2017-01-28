@@ -9,16 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var EditModalComponent = (function () {
-    function EditModalComponent() {
+var services_1 = require('@sys/services');
+var EditPageComponent = (function () {
+    function EditPageComponent(app) {
+        this.app = app;
     }
-    EditModalComponent = __decorate([
+    EditPageComponent.prototype.ngOnInit = function () {
+        this.app.layout.store();
+        this.app.layout.leftbar.open();
+    };
+    EditPageComponent.prototype.ngOnDestroy = function () {
+        this.app.layout.restore();
+    };
+    EditPageComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrls: 'edit.modal-component.html'
+            templateUrl: 'edit-page.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], EditModalComponent);
-    return EditModalComponent;
+        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object])
+    ], EditPageComponent);
+    return EditPageComponent;
+    var _a;
 }());
-exports.EditModalComponent = EditModalComponent;
+exports.EditPageComponent = EditPageComponent;

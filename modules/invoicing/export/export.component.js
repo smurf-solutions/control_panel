@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var service_1 = require('@sys/service');
+var services_1 = require('@sys/services');
 var ExportComponent = (function () {
     function ExportComponent(app) {
         this.app = app;
@@ -62,7 +62,7 @@ var ExportComponent = (function () {
             styleUrls: ['export.component.css'],
             templateUrl: 'export.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof service_1.SysService !== 'undefined' && service_1.SysService) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object])
     ], ExportComponent);
     return ExportComponent;
     var _a;

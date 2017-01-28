@@ -16,7 +16,8 @@ var flex_layout_1 = require('@angular/flex-layout');
 var forms_1 = require('@angular/forms');
 var pipes_1 = require('@sys/pipes');
 var material_2 = require('@sys/material');
-var edit_page_component_js_1 = require('./edit.page-component.js');
+var edit_page_component_js_1 = require('./edit-page.component.js');
+var edit_modal_component_js_1 = require('./edit-modal.component.js');
 var invoice_form_component_js_1 = require('./invoice-form/invoice-form.component.js');
 var EditModule = (function () {
     function EditModule() {
@@ -28,9 +29,9 @@ var EditModule = (function () {
                 router_1.RouterModule.forChild([{ path: 'Edit', component: edit_page_component_js_1.EditPageComponent }]),
                 pipes_1.PipeModules, material_2.AppMaterialModules
             ],
-            declarations: [edit_page_component_js_1.EditPageComponent, invoice_form_component_js_1.InvoiceFormComponent],
-            exports: [edit_page_component_js_1.EditPageComponent],
-            entryComponents: [invoice_form_component_js_1.InvoiceFormComponent]
+            declarations: [edit_page_component_js_1.EditPageComponent, edit_modal_component_js_1.EditModalComponent, invoice_form_component_js_1.InvoiceFormComponent],
+            exports: [edit_page_component_js_1.EditPageComponent, edit_modal_component_js_1.EditModalComponent],
+            entryComponents: [edit_modal_component_js_1.EditModalComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], EditModule);

@@ -11,10 +11,11 @@
 						<span md-suffix>{{ listInfo.founded }} / {{ listInfo.all }}</span>
 					</md-input>
 				</label> 
-				<button md-raised-button color="primary" (click)="newInvoice()">Нов</button>
+				<button md-raised-button color="primary" (click)="editInvoiceModal()">Нов</button>
 				<button md-icon-button routerLink="/Invoicing/Print"><md-icon>open_in_new</md-icon></button>
 			</span>
 	</md-toolbar>
+		
 		
 	<div class="padding" style="height: calc(100vh - 46px)">
 			<div background="smoke" style="text-align:center; padding-bottom:0.5em">
@@ -65,7 +66,7 @@
 		*ngIf="selected && selected.data.number > 0"
 	>
 			<md-toolbar>
-				<div fxFlex><button md-raised-button color="primary" routerLink="/Invoicing/Edit">EDIT</button></div>
+				<div fxFlex><button md-raised-button color="primary" (click)="editInvoiceModal(selected)">EDIT</button></div>
 				<button md-icon-button (click)="selected=null;app.layout.leftbar.open()"><md-icon>visibility_off</md-icon></button>
 				<button md-icon-button (click)="invoicing_bar.close()"><md-icon>chevron_right</md-icon></button>
 			</md-toolbar>

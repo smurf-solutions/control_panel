@@ -19,6 +19,7 @@ var material_2 = require('@sys/material');
 var list_component_js_1 = require('./list.component.js');
 var invoices_table_component_js_1 = require('./table/invoices-table.component.js');
 var view_module_js_1 = require('./../view/view.module.js');
+var edit_module_js_1 = require('./../edit/edit.module.js');
 var ListModule = (function () {
     function ListModule() {
     }
@@ -28,12 +29,13 @@ var ListModule = (function () {
                 common_1.CommonModule, material_1.MaterialModule, flex_layout_1.FlexLayoutModule, forms_1.FormsModule,
                 router_1.RouterModule.forChild([{ path: 'List', component: list_component_js_1.ListComponent }]),
                 pipes_1.PipeModules, material_2.AppMaterialModules,
-                view_module_js_1.ViewModule
+                view_module_js_1.ViewModule,
+                edit_module_js_1.EditModule
             ],
             declarations: [
                 list_component_js_1.ListComponent, invoices_table_component_js_1.InvoicesTableComponent,
             ],
-            exports: [list_component_js_1.ListComponent],
+            exports: [list_component_js_1.ListComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], ListModule);

@@ -21,7 +21,7 @@ var InvoicesTableComponent = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], InvoicesTableComponent.prototype, "selectedChange", void 0);
+    ], InvoicesTableComponent.prototype, "selectedChange");
     InvoicesTableComponent = __decorate([
         core_1.Component({
             selector: 'invoices-table',

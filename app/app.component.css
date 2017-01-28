@@ -62,7 +62,10 @@ md-sidenav[color="primary"] md-toolbar md-icon {
 	font-size:1rem;
 	padding-top:0.5rem }
 
-
+[mat-dialog-content], [md-dialog-content], mat-dialog-content, md-dialog-content {
+	max-height: 89vh!important }
+	
+	
 /*******************/
 /* add new STYLING */
 /*******************/

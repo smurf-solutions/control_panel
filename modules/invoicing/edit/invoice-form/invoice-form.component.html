@@ -1,29 +1,37 @@
-<form style="width:400px">
-	<div><md-input [(ngModel)]="number"   name="number"   type="number" placeholder="Номер" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="date"     name="date"     type="date"   placeholder="Дата" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="customer" name="customer" type="text"   placeholder="Клиент" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="city"     name="city"     type="text"   placeholder="Град" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="address"  name="address"  type="text"   placeholder="Адрес" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="tel"      name="tel"      type="text"   placeholder="Тел." style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="email"    name="email"    type="email"  placeholder="Email" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="payment"  name="payment"  type="text"   placeholder="Начин на плащане" style="width:100%"></md-input></div>
-	<div><md-input [(ngModel)]="pay_end"  name="pay_end"  type="date"   placeholder="Срок за плащане" style="width:100%"></md-input></div>
+<form style="width1:400px" >
+	<div fxLayout="row" fxLayoutPosition="space-between center">
+		<md-input fxFlex [(ngModel)]="number"   name="number"   type="number" placeholder="Номер" value="{{ number }}" autofocus></md-input>
+		<span>&nbsp;&nbsp;&nbsp;</span>
+		<md-input fxFlex [(ngModel)]="date"     name="date"     type="date"   placeholder="Дата" value="{{ date }}"></md-input>
+	</div>
+	<div fxLayout>
+		<md-input [(ngModel)]="customer" name="customer" type="text"   placeholder="Клиент" value="{{ customer }}" style="width:100%">
+		</md-input>
+		<span class="suffix"><button md-icon-button color="primary"><md-icon>add_box</md-icon></button></span>
+	</div>
+	<div fxLayout="row">
+		<md-input fxFlex [(ngModel)]="city"     name="city"     type="text"   placeholder="Град" value="{{ city }}"></md-input>
+		<span>&nbsp;&nbsp;&nbsp;</span>
+		<md-input fxFlex [(ngModel)]="address"  name="address"  type="text"   placeholder="Адрес" value="{{ address }}"></md-input>
+	</div>
+	<div fxLayout="row">
+		<md-input fxFlex [(ngModel)]="tel"      name="tel"      type="text"   placeholder="Тел." value="{{ phone }}"></md-input>
+		<span>&nbsp;&nbsp;&nbsp;</span>
+		<md-input fxFlex [(ngModel)]="email"    name="email"    type="email"  placeholder="Email" value="{{ email }}"></md-input>
+	</div>
+	<div fxLayout="row">
+		<md-input fxFlex [(ngModel)]="payment"  name="payment"  type="text"   placeholder="Начин на плащане" value="{{ payment }}"></md-input>
+		<span>&nbsp;&nbsp;&nbsp;</span>
+		<md-input fxFlex [(ngModel)]="pay_end"  name="pay_end"  type="date"   placeholder="Срок за плащане"value="{{ date_pay }}"></md-input>
+	</div>
 	
-	<table class="data">
-		<caption>Продукти</caption>
-		<thead>
-			<tr><th>Име</th><th>Ед.ц.</th><th>Кол.</th><th>Отстъпка</th></tr>
-		</thead>
-		<tbody>
-			<tr><td>Име</td><td>Ед.ц.</td><td>Кол.</td><td>Отстъпка</td></tr>
-			<tr><td>Име</td><td>Ед.ц.</td><td>Кол.</td><td>Отстъпка</td></tr>
-			<tr><td>Име</td><td>Ед.ц.</td><td>Кол.</td><td>Отстъпка</td></tr>
-		</tbody>
-		
-	</table>
-	
-	<br>
 	<div>
-		<button md-raised-button background="primary">Save</button>
+		<md-textarea placeholder="Забележка" name="note" style="width:100%">{{ note }}</md-textarea>
+	</div>
+	
+
+	<br>
+	<div align="right">
+		<button type="button" md-raised-button color="primary" (click)="save()">Save</button>
 	</div>
 </form>
