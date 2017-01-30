@@ -36,7 +36,6 @@
         <div style="min-width:750px;height:100vh">
             <router-outlet></router-outlet>
         </div>
-		
 		<md-sidenav #rightbar align="end" mode="side" style="width:300px; height:100vh" class="noprint">
 			<md-toolbar style="background:transparent">
 				<button md-icon-button (click)="app.layout.rightbarLocked=!app.layout.rightbarLocked;">
@@ -49,3 +48,33 @@
 		
 </md-sidenav-layout>
 
+
+<ng2-toasty
+	[position]="'top-right'"
+></ng2-toasty>
+<!--
+	addToast() {
+        // Just add default Toast with title only
+        this.toastyService.default('Hi there');
+        // Or create the instance of ToastOptions
+        var toastOptions:ToastOptions = {
+            title: "My title",
+            msg: "The message",
+            showClose: true,
+            timeout: 5000,
+            theme: 'default',
+            onAdd: (toast:ToastData) => {
+                console.log('Toast ' + toast.id + ' has been added!');
+            },
+            onRemove: function(toast:ToastData) {
+                console.log('Toast ' + toast.id + ' has been removed!');
+            }
+        };
+        // Add see all possible types in one shot
+        this.toastyService.info(toastOptions);
+        this.toastyService.success(toastOptions);
+        this.toastyService.wait(toastOptions);
+        this.toastyService.error(toastOptions);
+        this.toastyService.warning(toastOptions);
+    }
+-->

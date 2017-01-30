@@ -14,6 +14,7 @@ var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
 var flex_layout_1 = require('@angular/flex-layout');
 var http_1 = require('@angular/http');
+var ng2_toasty_1 = require('ng2-toasty');
 var not_found_1 = require('@sys/not-found');
 var services_1 = require('@sys/services');
 var AppConfig = require('./app.config');
@@ -29,12 +30,14 @@ var AppModule = (function () {
                 material_1.MaterialModule.forRoot(),
                 flex_layout_1.FlexLayoutModule.forRoot(),
                 http_1.HttpModule,
+                ng2_toasty_1.ToastyModule.forRoot(),
                 router_1.RouterModule.forRoot(AppConfig.Routing.concat([
                     { path: '**', component: not_found_1.NotFoundComponent }
                 ]), { useHash: true }),
                 not_found_1.NotFoundModule,
                 services_1.SysServicesModule
             ],
+            exports: [platform_browser_1.BrowserModule, ng2_toasty_1.ToastyModule],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
