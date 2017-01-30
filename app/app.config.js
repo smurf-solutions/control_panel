@@ -1,4 +1,5 @@
 "use strict";
+exports.DEMO = true;
 exports.Navigation = [
     {
         title: 'База',
@@ -11,7 +12,7 @@ exports.Navigation = [
             },
             { title: 'Клиенти',
                 desc: 'Управление на клиентите',
-                path: 'Contragents/Customers'
+                path: 'Customers'
             },
             { title: 'Продукти',
                 desc: 'Управление на продуктите',
@@ -80,7 +81,7 @@ exports.Navigation = [
 ];
 exports.Routing = [
     { path: 'Invoicing', loadChildren: 'modules/invoicing/invoicing.module.js#InvoicingModule' },
-    { path: 'Contragents/Customers', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
+    { path: 'Customers', loadChildren: 'modules/customers/customers.module.js#CustomersModule' },
     { path: 'Contragents/Supplyers', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
     { path: 'Store/Products', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
     { path: 'Employees/List', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },

@@ -24,7 +24,8 @@ var AppComponent = (function () {
         this.state = {};
         this.app.layout = this;
         this.app.company = company_config_js_1.CompanyConfig;
-        this.snack.open("Режим Демонстрация", "х");
+        if (this.Config.DEMO)
+            this.snack.open("Режим Демонстрация", "х");
     }
     AppComponent.prototype.store = function () {
         this.state.leftbar = {
