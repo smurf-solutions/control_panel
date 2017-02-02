@@ -80,6 +80,8 @@ exports.Navigation = [
     }
 ];
 exports.Routing = [
+    { path: '', redirectTo: 'Home', pathMatch: 'full' },
+    { path: 'Home', loadChildren: 'modules/home/home.module.js#HomeModule' },
     { path: 'Invoicing', loadChildren: 'modules/invoicing/invoicing.module.js#InvoicingModule' },
     { path: 'Customers', loadChildren: 'modules/customers/customers.module.js#CustomersModule' },
     { path: 'Contragents/Supplyers', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
