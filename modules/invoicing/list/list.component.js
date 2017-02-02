@@ -52,7 +52,7 @@ var ListComponent = (function () {
         this.selected = null;
         this.collections
             .get('invoices')
-            .subscribe(function (res) { return _this.invoices = res.invoices; });
+            .subscribe(function (res) { return _this.invoices = res.data; });
     };
     ListComponent.prototype.getPagesNum = function () {
         return Math.ceil(this.listInfo.founded / this.listInfo.perPage);
