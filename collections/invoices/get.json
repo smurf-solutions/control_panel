@@ -1,25 +1,7 @@
-{
-	"company": {
-		"name": "\u041c\u0414 \u041b\u0438\u0444\u0442 \u0421\u0435\u0440\u0432\u0438\u0437 \u041e\u041e\u0414",
-		"uic": "BG202950277",
-		"activity": "\u0421\u0435\u0440\u0432\u0438\u0437 \u0438 \u043f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u043d\u0430 \u0430\u0441\u0430\u043d\u0441\u044c\u043e\u0440\u0438",
-		"mrp": "\u0414\u0430\u043d\u0438\u0435\u043b \u0420\u0430\u0434\u0435\u0432",
-		"signer": "\u041c\u0430\u0440\u0438\u044f \u0414\u0438\u043c\u0438\u0442\u0440\u043e\u0432\u0430",
-		"address": {
-			"country": "\u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f",
-			"city": "\u0421\u043e\u0444\u0438\u044f",
-			"locale": "\u0443\u043b. \u041a\u044e\u0441\u0442\u0435\u043d\u0434\u0438\u043b \u2116 41"
-		},
-		"contacts": {
-			"phone": "02 \/ 954 49 62",
-			"email": "md_liftservice@abv.bg",
-			"site": ""
-		}
-	},
-	"found": 20,
-	"invoices": [{
+﻿{
+	"data": [{
 			"data": {
-				"id": "585",
+				"id":"585",
 				"number": "6498",
 				"date": "2016-12-01",
 				"sum": "330",
@@ -30,8 +12,8 @@
 				"date_pay": "2016-12-01"
 			},
 			"payment": {
-				"code": "cash",
-				"title": "\u0412 \u0431\u0440\u043e\u0439"
+				"type": "cash",
+				"title": "Плащане в брой"
 			},
 			"customer": {
 				"company": {
@@ -50,7 +32,7 @@
 				}
 			},
 			"products": [{
-					"id_product": "49",
+					"id": "49",
 					"uprice": "290.00",
 					"price": "290.0000",
 					"qty": "1.00",
@@ -73,7 +55,7 @@
 				"date_pay": "2016-12-01"
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -127,7 +109,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -181,7 +163,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -235,7 +217,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -289,7 +271,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "cash",
+				"type": "cash",
 				"title": "\u0412 \u0431\u0440\u043e\u0439"
 			},
 			"customer": {
@@ -332,7 +314,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -386,7 +368,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -440,7 +422,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -530,7 +512,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -584,7 +566,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -638,7 +620,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -692,7 +674,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -755,7 +737,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -809,7 +791,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -872,7 +854,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -926,7 +908,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
@@ -998,7 +980,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "cash",
+				"type": "cash",
 				"title": "\u0412 \u0431\u0440\u043e\u0439"
 			},
 			"customer": {
@@ -1041,7 +1023,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "cash",
+				"type": "cash",
 				"title": "\u0412 \u0431\u0440\u043e\u0439"
 			},
 			"customer": {
@@ -1084,7 +1066,7 @@
 				"date_pay": 1480975200
 			},
 			"payment": {
-				"code": "bank",
+				"type": "bank",
 				"title": "\u0411\u0430\u043d\u043a\u043e\u0432 \u043f\u044a\u0442",
 				"data": [{
 						"title": "BANK",
