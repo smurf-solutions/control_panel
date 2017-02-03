@@ -1,0 +1,38 @@
+﻿<md-toolbar color="transparent">
+	<div fxFlex>
+		<button md-icon-button (click)="app.layout.leftbar.toggle()"><md-icon>menu</md-icon></button>
+		Начало
+	</div>
+</md-toolbar>
+
+
+<div class="padding" fxLayout="row">
+	<md-card fxFlex="50" style="padding:0">
+		<md-toolbar color="primary">DB Server</md-toolbar>
+		<br>
+		<md-card-content class="padding">
+			<md-card-subtitle>Сменете сорса на базата с данни</md-card-subtitle>
+			<md-radio-group name="serv" >
+				<md-radio-button *ngFor="let server of servers"
+					style="width:100%"
+					[value]="server.link"
+					(click)="collections.changeServer(server.link)"
+					[checked]="server.link==collections.server"
+				>{{ server.title }}</md-radio-button>
+			</md-radio-group>
+			<div>
+				<md-input #serverUrl style="width:100%" 
+					(input)="collections.changeServer(serverUrl.value)" 
+					[value]="collections.server"></md-input>
+			</div>
+		</md-card-content>
+		<!--
+		<div>
+		<md-card-actions style="text-align: center">
+			<button md-raised-button color="primary">Смени</button>
+		</md-card-actions>
+		</div>
+		-->
+	</md-card>
+</div>
+

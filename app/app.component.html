@@ -3,12 +3,10 @@
         <md-sidenav #leftbar color="primary" align="start" mode="side" opened="true" 
 				style="width:160px; height:100vh;" class="no-print">
 			<div style="overflow-y:auto; overflow-x:hidden">
-				<md-toolbar color="transparent" style="border-width:0">
-					<span routerLink="Home" style="cursor:pointer; color:#fff">
-						<md-icon style="font-size:1rem;width:19px">dashboard</md-icon> 
-						<label style="font-size:1.1rem; cursor:pointer;">Начало</label>
-					</span>
-				</md-toolbar>
+				<button md-button routerLink="Home" routerLinkActive="active" style="margin-top:8px;padding-left:8px">
+					<md-icon style="font-size:1rem;width:19px">dashboard</md-icon> 
+					<label style="font-size:1.1rem; cursor:pointer;">Начало</label>
+				</button>
 				<div *ngFor="let group of Config.Navigation">
 					<md-toolbar color="transparent" (click)="leftbarMenuController=group.key">
 						<md-icon>{{ group.icon }}</md-icon> {{ group.title }} 

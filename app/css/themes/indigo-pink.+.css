@@ -18,7 +18,11 @@ md-sidenav[color="primary"] {
 md-sidenav[color="primary"] md-toolbar { 
 	color: #bbb }
 
+
+#toasty .toast.toasty-theme-default.toasty-type-info {
+	background-color: #3f51b5; }
 	
+
 /*******************/
 /* add new COLORS  */
 /*******************/

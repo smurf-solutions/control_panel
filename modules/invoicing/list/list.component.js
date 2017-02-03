@@ -24,6 +24,7 @@ var ListComponent = (function () {
         };
         this.listInfo = InvoicingConfig.listConfig;
         this.exportList = {};
+        this.sortList = ['data', '-total'];
     }
     ListComponent.prototype.editInvoiceModal = function (invoice) {
         var dialogRef = this.dialog.open(edit_modal_component_js_1.EditModalComponent, this.dialogConfig);
@@ -53,6 +54,16 @@ var ListComponent = (function () {
         this.collections
             .get('invoices')
             .subscribe(function (res) { return _this.invoices = res.data; });
+    };
+    ListComponent.prototype.getList = function () {
+        var items = [];
+        this.pageItems.forEach(function (a) {
+            items.push({
+                number: a.data.number,
+                date: a.data.date
+            });
+        });
+        return items;
     };
     ListComponent.prototype.getPagesNum = function () {
         return Math.ceil(this.listInfo.founded / this.listInfo.perPage);
