@@ -1,61 +1,51 @@
 "use strict";
-var baseDir = "./";
-
-/*
-var browserSync = require('browser-sync');
-
-function lessMiddleware (req, res, next) {
-    // Adapted directly from Browsersync exampes:
-    //   https://github.com/Browsersync/recipes/tree/master/recipes/middleware.css.injection
-
-    var parsed = require("url").parse(req.url);
-    if (parsed.pathname.match(/\.less$/)) {
-        return less(parsed.pathname).then(function (o) {
-            res.setHeader('Content-Type', 'text/css');
-            res.end(o.css);
-        });
-    }
-    next();
-
-    function less(src) {
-        var f = require('fs').readFileSync('app' + src).toString();
-        return require('less').render(f); 
-    }
-}
+/** Help on:
+		 https://browsersync.io/docs/options/
+		 https://github.com/Browsersync/recipes/tree/master/recipes/middleware.css.injection
 */
 
-function post ( req, res, next ) {
-	if( req.method == 'POST' ) {
-		var f = require('fs').readFileSync( baseDir + req.url ).toString();
-		res.setHeader('Content-Type','application/json');
-		res.end( f );
-	};
-	next();
+var dbDriver = require( './dbdrivers/files.js' );
+//var dbDriver = require( './dbdrivers/mongodb.js' );
+
+/** --- REST ---
+	GET    //collections/DB/TABLE[?where=WHERE]
+	POST   //collections/DB/TABLE
+				post data: {id:1,name:'NAME'}   # ако няма id прави нов запис
+	DELETE //collections/DB/TABLE?wher=WHERE
+*/
+function RESTMiddleware ( req, res, next ) {
+    if (req.url.match(/^\/collections\//)) {
+			res.setHeader('Content-Type','application/json');
+			var content = '[]'
+			switch( req.method ) {
+				case 'GET': 
+					content = dbDriver.get( req.url ) || content;
+					break;
+				case 'POST':
+					content = dbDriver.post( req.url ) || content;
+					break;
+				case 'DELETE':
+					content = dbDriver.del( req.url ) || content;
+					break;
+			}
+			res.end( content )
+	} else {
+		next();
+	}
 }
 
-/// Export configuration options
+
 module.exports = {
-	"files": [baseDir +"**/*.{js, html, css, json}"],
-    "watchOptions": { ignored: ['node_modules'] },
-	"server" : {
-        "baseDir" : baseDir ,
-        "index" : "index.html",
-		"routes" : {
-			"/collections/" : "./collections"
-		},
-		"middleware" : {
-			2 : post
+	files : ["**/*.{js, html, css, json}"],
+    watchOptions : { ignored: ['node_modules'] },
+	server : {
+        baseDir : './' ,
+        index : "index.html",
+		middleware : {
+			2 : RESTMiddleware
         }
     },
-	
-	"cors" : true,
-    //"https" : true,
-    //"browser" : ["google-chrome", "firefox"],
-	/* 
-	ui: {
-    port: 8080,
-    weinre: {
-        port: 9090
-    }
-	*/
+	https: true,
+	cors : true,
+	notify: false,
 }

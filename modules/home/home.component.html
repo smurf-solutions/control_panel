@@ -13,17 +13,17 @@
 		<md-card-content class="padding">
 			<md-card-subtitle>Сменете сорса на базата с данни</md-card-subtitle>
 			<md-radio-group name="serv" >
-				<md-radio-button *ngFor="let server of servers"
+				<md-radio-button *ngFor="let db of dbs"
 					style="width:100%"
-					[value]="server.link"
-					(click)="collections.changeServer(server.link)"
-					[checked]="server.link==collections.server"
-				>{{ server.title }}</md-radio-button>
+					[value]="db.link"
+					(click)="collections.changeDb(db.link)"
+					[checked]="db.link==collections.db"
+				>{{ db.title }}</md-radio-button>
 			</md-radio-group>
 			<div>
-				<md-input #serverUrl style="width:100%" 
-					(input)="collections.changeServer(serverUrl.value)" 
-					[value]="collections.server"></md-input>
+				<md-input #dbUrl style="width:100%" 
+					(input)="collections.changeDb(dbUrl.value)" 
+					[value]="collections.db"></md-input>
 			</div>
 		</md-card-content>
 		<!--

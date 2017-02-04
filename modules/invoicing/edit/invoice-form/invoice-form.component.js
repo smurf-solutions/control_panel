@@ -35,15 +35,15 @@ var InvoiceFormComponent = (function () {
             payment: this.payment,
             note: this.note
         };
-        this.toasty.error({ title: 'ДЕМО', msg: 'Записите са забранени !' });
+        this.toasty.warning({ title: 'ДЕМО', msg: 'Записите са забранени !' });
         return;
         this.service.post('invoices', data).subscribe(function (res) {
             var res = JSON.parse(res._body);
             if (res.success) {
-                _this.snackBar.open("Записът е успеше", null, { duration: 4000, color: 'warn' });
+                _this.toasty.success("Записът е успеше");
             }
             else {
-                _this.snackBar.open("Нещо се е прецакало", "Презареди", { color: 'warn' });
+                _this.toasty.error("Нещо се е прецакало");
             }
         });
     };

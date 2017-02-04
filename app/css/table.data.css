@@ -43,4 +43,14 @@ table.data tbody md-icon:hover {
 table.data.selectable tr.selected td, table.data.selectable tr.selected th { 
 	background: #ddd!important }
 
+
+table.data.orderable .ordered {
+	padding-right: 12px;
+	background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC");
+	background-repeat: no-repeat;
+	background-position: right center; 
+	box-sizing: border-box }
+table.data.orderable .ordered.desc {
+	background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAqSURBVBhXY6AOKC8v/w9lggEjlEaR6OzsBIuDCXQdIABSwIhNggjAwAAAcZwMzL3asrkAAAAASUVORK5CYII=");}
+
 /**/

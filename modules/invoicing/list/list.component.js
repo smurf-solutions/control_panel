@@ -24,7 +24,6 @@ var ListComponent = (function () {
         };
         this.listInfo = InvoicingConfig.listConfig;
         this.exportList = {};
-        this.sortList = ['data', '-total'];
     }
     ListComponent.prototype.editInvoiceModal = function (invoice) {
         var dialogRef = this.dialog.open(edit_modal_component_js_1.EditModalComponent, this.dialogConfig);

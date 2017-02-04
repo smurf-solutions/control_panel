@@ -1,13 +1,28 @@
-<table class="data hover selectable printable" style="min-width: 563px;">
+<table class="data hover selectable printable orderable" style="min-width: 563px;">
 	<thead><tr>
-			<th>Пл.</th>
-			<th>№</th>
-			<th>Дата</th>
-			<th>Клиент</th>
-			<th align="right">Сума<br><sup>без ДДС</sup></th>
-			<th align="right">Отстъпка</th>
-			<th align="right">ДДС</th>
-			<th align="right">Тотал</th>
+			<th width="20px">Пл.</th>
+			<th (click)="orderBy('data.number')"
+				[class.ordered]="order=='data.number'" [class.desc]="orderWay!='asc'" 
+				width="50px" style1="padding:0 1em"> № </th>
+			<th (click)="orderBy('data.date')"
+				[class.ordered]="order=='data.date'" [class.desc]="orderWay!='asc'" 
+				width="90px"> Дата </th>
+			<th (click)="orderBy('customer.company.name')"
+				[class.ordered]="order=='customer.company.name'" [class.desc]="orderWay!='asc'" 
+				> Клиент </th>
+			<th (click)="orderBy('data.sum')"
+				[class.ordered]="order=='data.sum'" [class.desc]="orderWay!='asc'" 
+				width="80px" align="right"> Сума <br><sup>без ДДС</sup></th>
+			<th (click)="orderBy('data.discount')" 
+				[class.ordered]="order=='data.discount'" [class.desc]="orderWay!='asc'" 
+				width="60px" align="right"> Отстъпка </th>
+			<th (click)="orderBy('data.vat')" 
+				[class.ordered]="order=='data.vat'" [class.desc]="orderWay!='asc'" 
+				width="60px" align="right"> ДДС </th>
+			<th (click)="orderBy('data.total')" 
+				[class.ordered]="order=='data.total'" [class.desc]="orderWay!='asc'" 
+				width="80px" align="right"> Тотал </th>
+				
 	</tr></thead>
 	<tbody>
 		<tr *ngFor="let invoice of invoices"

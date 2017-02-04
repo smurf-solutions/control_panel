@@ -12,22 +12,45 @@ var core_1 = require('@angular/core');
 var InvoicesTableComponent = (function () {
     function InvoicesTableComponent() {
         this.selectedChange = new core_1.EventEmitter();
+        this.orderChange = new core_1.EventEmitter();
+        this.orderWayChange = new core_1.EventEmitter();
     }
     InvoicesTableComponent.prototype.getSum = function (key) {
         if (!this.invoices)
             return;
         return this.invoices.reduce(function (a, b) { return a + parseFloat(b.data[key]); }, 0);
     };
+    InvoicesTableComponent.prototype.orderBy = function (key) {
+        if (this.order == key) {
+            this.orderWay = this.orderWay == 'asc' ? 'desc' : 'asc';
+            this.orderWayChange.emit(this.orderWay);
+        }
+        else {
+            if (this.orderWay !== 'asc') {
+                this.orderWay = 'asc';
+                this.orderWayChange.emit(this.orderWay);
+            }
+            this.orderChange.emit(key);
+        }
+    };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], InvoicesTableComponent.prototype, "selectedChange");
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], InvoicesTableComponent.prototype, "orderChange");
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], InvoicesTableComponent.prototype, "orderWayChange");
     InvoicesTableComponent = __decorate([
         core_1.Component({
             selector: 'invoices-table',
             moduleId: module.id,
             templateUrl: 'invoices-table.component.html',
-            inputs: ['invoices', 'selected']
+            inputs: ['invoices', 'selected', 'order', 'orderWay']
         }), 
         __metadata('design:paramtypes', [])
     ], InvoicesTableComponent);

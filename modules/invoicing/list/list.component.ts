@@ -21,10 +21,8 @@ export class ListComponent {
 		width: '600px', height: '', position: { top: '', bottom: '', left: '', right: ''}
 	}
 
-	//collectionOperations = InvoicingConfig.collectionOperations;
 	listInfo = InvoicingConfig.listConfig;
 	exportList = {};
-	sortList = ['data', '-total'];
 	
 
 	constructor( 
@@ -65,7 +63,7 @@ export class ListComponent {
 			.subscribe( res => this.invoices = res.data );
 	}
 	
-	/* experimental */
+	/* experimental */ 
 	getList() {
 		let items = [];
 		this.pageItems.forEach( a => {

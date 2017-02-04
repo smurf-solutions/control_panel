@@ -36,11 +36,17 @@
 		
 			<invoices-table
 				[invoices]="invoices 
-							| search : search 
-									 : ['search every where'] 
-									 : listInfo
-							| slice  : listInfo.perPage*(listInfo.page-1) : listInfo.perPage*listInfo.page
-							| dump   : exportList"
+							| search  : search 
+									  : ['search every where'] 
+									  : listInfo
+							| orderBy : listInfo.orderBy : listInfo.orderWay
+							| slice   : listInfo.perPage*(listInfo.page-1) : listInfo.perPage*listInfo.page
+							| dump    : exportList
+							"
+				[order]="listInfo.orderBy"
+				(orderChange)="listInfo.orderBy=$event"
+				[orderWay]="listInfo.orderWay"
+				(orderWayChange)="listInfo.orderWay=$event"
 				[selected]="selected"
 				(selectedChange)="select($event)"
 			></invoices-table>

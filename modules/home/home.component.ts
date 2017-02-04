@@ -11,9 +11,9 @@ import { ToastyService }      from 'ng2-toasty';
 	templateUrl: 'home.component.html'
 })
 export class HomeComponent {
-	servers = [
-		{ title: 'Local', link: 'http://localhost:3000/collections/'},
-		{ title: 'Demo',  link: 'https://smurf-solutions.github.io/control_panel/collections/' }
+	dbs = [
+		{ title: 'Local', link: '//localhost:3000/collections/demo/'},
+		{ title: 'Demo',  link: '//smurf-solutions.github.io/control_panel/collections/demo/' }
 	];
 	
 	constructor(
