@@ -11,9 +11,17 @@ import { CollectionsService }   from '@sys/services';
 	moduleId: module.id,
 	selector: 'invoice-form',
 	templateUrl: 'invoice-form.component.html',
-	inputs: [ 'number','date','date_pay','customer','mrp','uic','email','phone','city','country','address', 'payment','note' ]
+	inputs: [ 'data','customer','payment', 'products'
+			//'number','date','date_pay','customer','mrp',
+				//'uic','email','phone','city','country','address', 'payment','note'
+				]
 })
 export class InvoiceFormComponent {
+	data = {};
+	payment = {};
+	customer = {company:{},address:{},contacts:{}};
+	products = [];
+	
 	constructor (
 		private service: CollectionsService,
 		public snackBar: MdSnackBar,
@@ -22,31 +30,57 @@ export class InvoiceFormComponent {
 	
 	save() {
 		let data = {
-			number: this.number,
-			date: this.date,
-			date_pay: this.date_pay,
-			customer: this.customer,
-			mrp: this.mrp,
-			uic: this.uic,
-			email: this.email,
-			phone: this.phone,
-			city: this.city,
-			country: this.country,
-			address: this.address,
+			//"id":"585",
+			data: this.data,
 			payment: this.payment,
-			note: this.note
+			customer: this.customer,
+			products: this.products
+			/*
+			"data": {
+				"number": this.number,
+				"date": this.date,
+				"sum": 0,
+				"vat": 0,
+				"discount": 0,
+				"total": 0,
+				"note": this.note,
+				"date_pay": this.date_pay
+			},
+			"payment": {
+				"type": this.payment,
+				"title": this.payment
+			},
+			"customer": {
+				"company": {
+					"name": this.customer,
+					"uic": this.uic,
+					"mrp": this.mrp
+				},
+				"address": {
+					"country": this.country,
+					"city": this.city,
+					"locale": this.address
+				},
+				"contacts": {
+					"phone": this.phone,
+					"email": this.email
+				}
+			},
+			*/
 		};
-		this.toasty.warning({title:'ДЕМО', msg:'Записите са забранени !'});
-		return;
+		
+		//this.toasty.warning({title:'ДЕМО', msg:'Записите са забранени !'});
+		//return;
 		
 		this.service.post( 'invoices', data ).subscribe( res => {
-			let res = JSON.parse( res._body );
-			 
+			console.log(res)
+			//let res = JSON.parse( res._body );
+			 /*
 			if( res.success ) {
 				this.toasty.success("Записът е успеше");
 			} else {
 				this.toasty.error("Нещо се е прецакало")
-			}
+			}*/
 		});
 	}
 }

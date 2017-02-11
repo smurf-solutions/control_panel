@@ -54,16 +54,6 @@ var ListComponent = (function () {
             .get('invoices')
             .subscribe(function (res) { return _this.invoices = res.data; });
     };
-    ListComponent.prototype.getList = function () {
-        var items = [];
-        this.pageItems.forEach(function (a) {
-            items.push({
-                number: a.data.number,
-                date: a.data.date
-            });
-        });
-        return items;
-    };
     ListComponent.prototype.getPagesNum = function () {
         return Math.ceil(this.listInfo.founded / this.listInfo.perPage);
     };

@@ -5,7 +5,15 @@
 
 <md-dialog-content style="height:100%">
 	<invoice-form 
-		[number]   = "invoice.number"
+		[data]="invoice"
+		[customer]="customer"
+		[payment]="payment"
+		[products]="products"
+	></invoice-form>	
+</md-dialog-content>
+
+<!--
+[number]   = "invoice.number"
 		[date]     = "invoice.date"
 		[note]     = "invoice.note"
 		[customer] = "customer.company.name"
@@ -18,10 +26,6 @@
 		[address]  = "customer.address.locale"
 		[date_pay] = "invoice.date_pay"
 		[payment]  = "payment.title"
-	></invoice-form>	
-</md-dialog-content>
-
-<!--
 <md-dialog-actions [attr.align]="actionsAlignment">
 	<button
 		md-raised-button

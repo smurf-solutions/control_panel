@@ -26,17 +26,17 @@
 	</tr></thead>
 	<tbody>
 		<tr *ngFor="let invoice of invoices"
-			[class.selected]="selected && selected.data.number == invoice.data.number"
+			[class.selected]="selected && selected._id == invoice._id"
 			(click)="selectedChange.emit(invoice)"
 		>
 			<td align="center"><md-icon>start</md-icon></td>
-			<td align="center">{{ invoice.data.number }}</td>
-			<td align="center">{{ invoice.data.date     | date : 'dd.MM.yyyy' }}</td>
-			<td align="left">  {{ invoice.customer.company.name }}</td>
-			<td align="right"> {{ invoice.data.sum      | number : '.2-2' }}</td>
-			<td align="right"> {{ invoice.data.discount | number : '.2-2' }}</td>
-			<td align="right"> {{ invoice.data.vat      | number : '.2-2' }}</td>
-			<th align="right"> {{ invoice.data.total    | number : '.2-2' }}</th>
+			<td align="center">{{ invoice.data?.number }}</td>
+			<td align="center">{{ invoice.data?.date     | date : 'dd.MM.yyyy' }}</td>
+			<td align="left">  {{ invoice.customer?.company?.name }}</td>
+			<td align="right"> {{ invoice.data?.sum      | number : '.2-2' }}</td>
+			<td align="right"> {{ invoice.data?.discount | number : '.2-2' }}</td>
+			<td align="right"> {{ invoice.data?.vat      | number : '.2-2' }}</td>
+			<th align="right"> {{ invoice.data?.total    | number : '.2-2' }}</th>
 		</tr>
 		<tr *ngIf="!invoices || invoices.length < 1">
 			<th colspan="8">Няма намерени записи</th>

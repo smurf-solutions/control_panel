@@ -1,4 +1,5 @@
 ﻿{
+	"msg":{"title":"Demo","msg":"Demo Mode can not save"},
 	"data": [
 		{   "id":       1,
 			"name":     { "personal":"Светослав", "surname":"Маринов","family":"Kotarov"},

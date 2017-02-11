@@ -17,34 +17,20 @@ var InvoiceFormComponent = (function () {
         this.service = service;
         this.snackBar = snackBar;
         this.toasty = toasty;
+        this.data = {};
+        this.payment = {};
+        this.customer = { company: {}, address: {}, contacts: {} };
+        this.products = [];
     }
     InvoiceFormComponent.prototype.save = function () {
-        var _this = this;
         var data = {
-            number: this.number,
-            date: this.date,
-            date_pay: this.date_pay,
-            customer: this.customer,
-            mrp: this.mrp,
-            uic: this.uic,
-            email: this.email,
-            phone: this.phone,
-            city: this.city,
-            country: this.country,
-            address: this.address,
+            data: this.data,
             payment: this.payment,
-            note: this.note
+            customer: this.customer,
+            products: this.products
         };
-        this.toasty.warning({ title: 'ДЕМО', msg: 'Записите са забранени !' });
-        return;
         this.service.post('invoices', data).subscribe(function (res) {
-            var res = JSON.parse(res._body);
-            if (res.success) {
-                _this.toasty.success("Записът е успеше");
-            }
-            else {
-                _this.toasty.error("Нещо се е прецакало");
-            }
+            console.log(res);
         });
     };
     InvoiceFormComponent = __decorate([
@@ -52,7 +38,8 @@ var InvoiceFormComponent = (function () {
             moduleId: module.id,
             selector: 'invoice-form',
             templateUrl: 'invoice-form.component.html',
-            inputs: ['number', 'date', 'date_pay', 'customer', 'mrp', 'uic', 'email', 'phone', 'city', 'country', 'address', 'payment', 'note']
+            inputs: ['data', 'customer', 'payment', 'products'
+            ]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof services_1.CollectionsService !== 'undefined' && services_1.CollectionsService) === 'function' && _a) || Object, material_1.MdSnackBar, ng2_toasty_1.ToastyService])
     ], InvoiceFormComponent);

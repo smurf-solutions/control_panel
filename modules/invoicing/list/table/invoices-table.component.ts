@@ -13,8 +13,8 @@ export class InvoicesTableComponent {
 	@Output() orderWayChange = new EventEmitter();
 	
 	getSum( key ) {
-		if(!this.invoices) return;
-		return this.invoices.reduce( (a,b)=>{return a+parseFloat(b.data[key])}, 0);
+		if(!this.invoices) return 0;
+		return this.invoices.reduce( (a,b)=>{return a + (b.data && b.data[key] ? parseFloat(b.data[key]) : 0) }, 0);
 	}
 	
 	orderBy( key ) {

@@ -17,6 +17,7 @@ import { EditModalComponent }      from './../edit/edit-modal.component.js';
 })
 export class ListComponent {
 	@ViewChild('invoicing_bar') invoicing_bar;
+	
 	dialogConfig = { disableClose: false,
 		width: '600px', height: '', position: { top: '', bottom: '', left: '', right: ''}
 	}
@@ -63,18 +64,7 @@ export class ListComponent {
 			.subscribe( res => this.invoices = res.data );
 	}
 	
-	/* experimental */ 
-	getList() {
-		let items = [];
-		this.pageItems.forEach( a => {
-			items.push({
-				number: a.data.number,
-				date: a.data.date,
-				
-			});
-		});
-		return items;
-	}
+	
 	
 	/*
 	getPageItems() {
