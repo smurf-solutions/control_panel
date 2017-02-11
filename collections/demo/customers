@@ -1,7 +1,7 @@
 ﻿{
 	"msg":{"title":"Demo","msg":"Demo Mode can not save"},
 	"data": [
-		{   "id":       1,
+		{   "_id":       1,
 			"name":     { "personal":"Светослав", "surname":"Маринов","family":"Kotarov"},
 			"company":  [  
 							{"id":"", "name":"Smurf Ltd", "position":"Управител" } 
@@ -25,7 +25,7 @@
 			"egn":		1234567890,
 			"access":   [{"type":"backoffice","name":"admin"}]
 		},
-		{   "id":       2,
+		{   "_id":       2,
 			"name":     { "personal":"Петър", "family":"Петров"},
 			"company":  [  
 							{"id":"", "name":"Smurf Ltd", "position":"Управител" } 
