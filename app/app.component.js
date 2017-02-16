@@ -12,10 +12,12 @@ var core_1 = require('@angular/core');
 var core_2 = require('@angular/core');
 var material_1 = require('@angular/material');
 var services_1 = require('@sys/services');
+var services_2 = require('@sys/services');
 var AppConfig = require('./app.config.js');
 var company_config_js_1 = require('../company.config.js');
 var AppComponent = (function () {
-    function AppComponent(app, snack) {
+    function AppComponent(collections, app, snack) {
+        this.collections = collections;
         this.app = app;
         this.snack = snack;
         this.title = 'Admin panel ';
@@ -78,9 +80,9 @@ var AppComponent = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_c = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _c) || Object, material_1.MdSnackBar])
+        __metadata('design:paramtypes', [(typeof (_c = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _c) || Object, (typeof (_d = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _d) || Object, material_1.MdSnackBar])
     ], AppComponent);
     return AppComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 exports.AppComponent = AppComponent;

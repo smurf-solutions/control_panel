@@ -8,11 +8,10 @@ import { ToastyModule }          from 'ng2-toasty';
 
 import { NotFoundComponent, NotFoundModule } from '@sys/not-found';
 import { SysServicesModule }     from '@sys/services';
+import { ModalsModule }          from '@sys/modals';
 
 import * as AppConfig            from './app.config';
 import { AppComponent }          from './app.component';
-
-
 
 @NgModule({
   imports:      [
@@ -28,7 +27,8 @@ import { AppComponent }          from './app.component';
             { path:'**', component:NotFoundComponent}
         ]), { useHash: true } ),
 	NotFoundModule,
-	SysServicesModule
+	SysServicesModule,
+	ModalsModule
   ],
   exports:      [ BrowserModule, ToastyModule ],
   declarations: [ AppComponent ],

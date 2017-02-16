@@ -14,7 +14,7 @@
  
 "use strict";
  
-//var dbDriver = require( './dbdrivers/files.js' );
+//var dbDriver = require( './dbdrivers/jsonfiles.js' );
 var dbDriver = require( './dbdrivers/mongodb.js' );
 
 var parser = require("./parser.js");
@@ -29,8 +29,11 @@ exports.RESTMiddleware = function RESTMiddleware ( req, res, next ) {
 		var urlParts = req.url.split("collections/")[1].split("?");
 		var [ dbname, collection ] = urlParts[0].split("/");		
 		var params = parser.parseUrlParams( urlParts[1] );
+		params.token = parser.parseToken( req.headers );
 		
 		console.log( params );
+		//console.log(req.headers);
+		//params.access = req.headers.access;
 		
 		res.setHeader('Content-Type','application/json');
 		
@@ -66,6 +69,10 @@ exports.RESTMiddleware = function RESTMiddleware ( req, res, next ) {
 					send( res, ret );
 				}); break;
 		}
+	} else if( req.method=="POST" ) {
+		require('fs').readFile( "index.html", 'utf8', function( err, data ){
+				if( !err ) res.end( data.toString() );
+		});
 	} else {
 		next();
 	}

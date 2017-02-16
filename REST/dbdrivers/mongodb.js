@@ -6,13 +6,19 @@ function find( dbname, collection, params, callback ) {
 		if(err) {
 			console.log( err )
 		} else {
-			db.collection( collection )
-			  .find( params.filter || {} )
-			  .toArray(function( err, items ){
-					db.close();
-					var ret = { data: items };
-					callback( ret );
-			  });
+			db.authenticate( params.token[0]||'', params.token[1]||'', function(err,res){
+				if( res ) {
+					db.collection( collection )
+					  .find( params.filter || {} )
+					  .toArray(function( err, items ){
+							db.close();
+							var ret = { data: items };
+							callback( ret );
+					  });
+				} else {
+					callback( { access: 'DENIDED', msg:{type:"error",title:err.name, msg:err.message} } );
+				}
+			});
 		}
 	});
 }

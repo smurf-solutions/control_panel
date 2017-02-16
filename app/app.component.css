@@ -40,27 +40,32 @@ button[md-button], button[md-raised-button] {
 button[md-button] md-icon, button[md-raised-button] md-icon { 
 	font-size:1em!important; 
 	width:1em; 
-	line-height:1.7em!important; 
+	line-height:1.4em!important; 
 	margin-right:0.5em }
 
 md-sidenav { 
 	box-shadow: none!important; 
 	border-width: 0 1px; 
-	border-style:solid }
+	border-style:solid;}
 md-sidenav button[md-button] {
 	width:100%; 
 	text-align:left; 
-	padding-left: 32px }
+	padding-left: 36px }
+md-sidenav .cdk-focus-trap-content > div > button {
+	padding:8px;
+	padding-left: 8px!important;
+	height:45px!important;
+	font-size:1rem;	}
 md-sidenav[color="primary"] { 
 	border-width:0 }
 md-sidenav[color="primary"] md-toolbar { 
 	padding-left:8px !important;
-	margin-top:8px;
 	border-top:1px solid;
 	cursor:pointer }
 md-sidenav[color="primary"] md-toolbar md-icon {
-	font-size:1rem;
-	padding-top:0.5rem }
+	font-size:1.15rem;
+	position:relative;
+	top:0.17rem }
 
 [mat-dialog-content], [md-dialog-content], mat-dialog-content, md-dialog-content {
 	max-height: 89vh!important }
@@ -83,3 +88,8 @@ md-icon.prefix svg, md-icon.suffix svg {
 	position:relative; 
 	top:0.2em; 
 	width: 1em }
+
+button[md-icon-button][md-dialog-close] {
+	position:relative;
+	top: -1em;
+	right: -1em }

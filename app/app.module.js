@@ -17,6 +17,7 @@ var http_1 = require('@angular/http');
 var ng2_toasty_1 = require('ng2-toasty');
 var not_found_1 = require('@sys/not-found');
 var services_1 = require('@sys/services');
+var modals_1 = require('@sys/modals');
 var AppConfig = require('./app.config');
 var app_component_1 = require('./app.component');
 var AppModule = (function () {
@@ -35,7 +36,8 @@ var AppModule = (function () {
                     { path: '**', component: not_found_1.NotFoundComponent }
                 ]), { useHash: true }),
                 not_found_1.NotFoundModule,
-                services_1.SysServicesModule
+                services_1.SysServicesModule,
+                modals_1.ModalsModule
             ],
             exports: [platform_browser_1.BrowserModule, ng2_toasty_1.ToastyModule],
             declarations: [app_component_1.AppComponent],

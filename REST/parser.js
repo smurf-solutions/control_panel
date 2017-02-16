@@ -38,4 +38,15 @@ function parseUrlParams( path ) {
 	return params;
 }
 
+function parseToken( header ) {
+	var ret = null;
+	if( header.token ) {
+		ret = Buffer.from( header.token, 'base64' );
+		ret = parseJson( ret.toString() );
+	}
+	return ret;
+}
+
+
 exports.parseUrlParams = parseUrlParams;
+exports.parseToken = parseToken;

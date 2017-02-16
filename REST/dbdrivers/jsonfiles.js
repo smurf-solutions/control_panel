@@ -15,7 +15,7 @@ function _fileExists( file ) {
 }
 
 
-function getFromFile( dirname, filename, filter, callback ){
+function find( dirname, filename, filter, callback ){
 		var file = ('./collections/'+dirname+'/'+filename).replace(/\/\//g,"/");
 		if( _fileExists( file ) ) {		
 			fs.readFile( file, 'utf8', function( err, data ){
@@ -27,17 +27,23 @@ function getFromFile( dirname, filename, filter, callback ){
 		} else callback({});
 };
 	
-function postToFile( dirname, filename, data, filter, callback ) {
+function update( dirname, filename, data, filter, callback ) {
 	var ret = '{"success":true, "msg":{"title":"Demo","msg":"Demo Mode can not save"}}';
 	callback( ret );
 };
 
-function deleteFromFile( dirname, filename, filter, callback ) {
+function insert( dirname, filename, data, callback ) {
+	var ret = '{"success":true, "msg":{"title":"Demo","msg":"Demo Mode can not save"}}';
+	callback( ret );
+};
+
+function remove( dirname, filename, filter, callback ) {
 	var ret = '{"success":true, "msg":{"title":"Demo","msg":"Demo Mode can not save"}}';
 	callback( ret );
 };
 
 
-exports.get    = getFromFile;
-exports.post   = postToFile;
-exports.del    = deleteFromFile;
+exports.find    = find;
+exports.update  = update;
+exports.insert  = insert;
+exports.remove  = remove;
