@@ -39,11 +39,13 @@ export class AppComponent  {
 		if(this.Config.DEMO) this.snack.open("Режим Демонстрация","х");
 	}
 
-	/*
-	login() {
-		this.dialog.open( LoginModalComponent );
-	}
-	*/
+getDbName() {
+	let parser = document.createElement('a');
+	parser.href = this.collections.authService.dbUrl ;
+	
+	return parser.hostname +'  '+ parser.pathname.replace('/collections/','').replace('/',' ');
+	return this.collections.authService.dbUrl;
+}
 	
 	/**
 	Store and Restore Application state

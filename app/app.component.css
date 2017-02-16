@@ -60,7 +60,7 @@ md-sidenav[color="primary"] {
 	border-width:0 }
 md-sidenav[color="primary"] md-toolbar { 
 	padding-left:8px !important;
-	border-top:1px solid;
+	border-top:1px solid #999;
 	cursor:pointer }
 md-sidenav[color="primary"] md-toolbar md-icon {
 	font-size:1.15rem;

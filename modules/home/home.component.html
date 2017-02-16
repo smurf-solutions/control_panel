@@ -8,23 +8,14 @@
 
 <div class="padding" fxLayout="row">
 	<md-card fxFlex="50" style="padding:0">
-		<md-toolbar color="primary">DB Server</md-toolbar>
+		<md-toolbar color="primary">DB Information</md-toolbar>
 		<br>
 		<md-card-content class="padding">
-			<md-card-subtitle>Сменете сорса на базата с данни</md-card-subtitle>
+			<md-card-subtitle>Данни за връзка с Базата</md-card-subtitle>
 			<md-radio-group name="serv" >
-				<md-radio-button *ngFor="let db of dbs"
-					style="width:100%"
-					[value]="db.link"
-					(click)="collections.changeDb(db.link)"
-					[checked]="db.link==collections.db"
-				>{{ db.title }}</md-radio-button>
+				<div>URL:  <b>{{ collections.authService.dbUrl }}</b> </div>
+				<div>User: <b>{{ collections.authService.user }}</b> </div>
 			</md-radio-group>
-			<div>
-				<md-input #dbUrl style="width:100%" 
-					(input)="collections.changeDb(dbUrl.value)" 
-					[value]="collections.db"></md-input>
-			</div>
 		</md-card-content>
 		<!--
 		<div>

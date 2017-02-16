@@ -6,10 +6,10 @@
 				<button md-button background="dark" (click)="collections.resetData()" style="height: 52px!important">
 					<md-icon>account_circle</md-icon>
 					<span>
-						<span>Username</span>
+						<span>{{ collections.authService.user }}</span>
 						<br>
-						<span style="color:#aaa; font-size:0.7rem; margin-left: 2rem;position:relative;top:-5px;">
-							Local/Demo</span>
+						<span style="color:#aaa; font-size:0.7rem; margin-left: 28px;position:relative;top:-5px;">
+							{{ getDbName() }}</span>
 					</span>
 				</button>
 				

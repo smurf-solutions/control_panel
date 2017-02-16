@@ -17,10 +17,6 @@ var HomeComponent = (function () {
         this.app = app;
         this.collections = collections;
         this.toasty = toasty;
-        this.dbs = [
-            { title: 'Local', link: '//localhost:3000/collections/demo/' },
-            { title: 'Demo', link: '//smurf-solutions.github.io/control_panel/collections/demo/' }
-        ];
     }
     HomeComponent = __decorate([
         core_1.Component({

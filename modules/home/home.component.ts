@@ -11,10 +11,12 @@ import { ToastyService }      from 'ng2-toasty';
 	templateUrl: 'home.component.html'
 })
 export class HomeComponent {
+	/*
 	dbs = [
 		{ title: 'Local', link: '//localhost:3000/collections/demo/'},
 		{ title: 'Demo',  link: '//smurf-solutions.github.io/control_panel/collections/demo/' }
 	];
+	*/
 	
 	constructor(
 		public app: SysService,

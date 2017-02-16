@@ -29,6 +29,12 @@ var AppComponent = (function () {
         if (this.Config.DEMO)
             this.snack.open("Режим Демонстрация", "х");
     }
+    AppComponent.prototype.getDbName = function () {
+        var parser = document.createElement('a');
+        parser.href = this.collections.authService.dbUrl;
+        return parser.hostname + '  ' + parser.pathname.replace('/collections/', '').replace('/', ' ');
+        return this.collections.authService.dbUrl;
+    };
     AppComponent.prototype.store = function () {
         this.state.leftbar = {
             opened: this.leftbar.opened
