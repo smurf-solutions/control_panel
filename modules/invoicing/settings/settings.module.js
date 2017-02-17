@@ -9,17 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
-var flex_layout_1 = require('@angular/flex-layout');
+var modules_js_1 = require('@sys/modules.js');
 var settings_component_js_1 = require('./settings.component.js');
 var SettingsModule = (function () {
     function SettingsModule() {
     }
     SettingsModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, material_1.MaterialModule, flex_layout_1.FlexLayoutModule,
+            imports: [modules_js_1.SysModules,
                 router_1.RouterModule.forChild([{ path: 'Settings', component: settings_component_js_1.SettingsComponent }])
             ],
             declarations: [settings_component_js_1.SettingsComponent],

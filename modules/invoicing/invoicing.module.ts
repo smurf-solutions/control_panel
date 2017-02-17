@@ -1,6 +1,6 @@
 import { NgModule }                   from '@angular/core';
 import { RouterModule }               from '@angular/router';
-import { MaterialModule }             from '@angular/material';
+//import { MaterialModule }             from '@angular/material';
 
 import { ListModule }                 from './list/list.module.js';
 import { ViewModule }                 from './view/view.module.js';
@@ -12,14 +12,13 @@ import { SettingsModule }             from './settings/settings.module.js';
 
 @NgModule({
 	imports: [
-		MaterialModule.forRoot(),
+		//MaterialModule.forRoot(),
 		RouterModule.forChild([{ path:'',redirectTo:'/Invoicing/List', pathMatch:'full' }]),
 		ListModule,
 		ViewModule,
 		EditModule,
 		SettingsModule,
 		ExportModule
-	],
-	//providers: [ InvoicingService ]
+	]
 })
 export class InvoicingModule {}

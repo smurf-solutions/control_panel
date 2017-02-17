@@ -9,13 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
-var flex_layout_1 = require('@angular/flex-layout');
-var forms_1 = require('@angular/forms');
-var pipes_1 = require('@sys/pipes');
-var material_2 = require('@sys/material');
+var modules_js_1 = require('@sys/modules.js');
 var list_component_js_1 = require('./list.component.js');
 var invoices_table_component_js_1 = require('./table/invoices-table.component.js');
 var view_module_js_1 = require('./../view/view.module.js');
@@ -26,9 +21,8 @@ var ListModule = (function () {
     ListModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule, material_1.MaterialModule, flex_layout_1.FlexLayoutModule, forms_1.FormsModule,
                 router_1.RouterModule.forChild([{ path: 'List', component: list_component_js_1.ListComponent }]),
-                pipes_1.PipeModules, material_2.AppMaterialModules,
+                modules_js_1.SysModules,
                 view_module_js_1.ViewModule,
                 edit_module_js_1.EditModule
             ],

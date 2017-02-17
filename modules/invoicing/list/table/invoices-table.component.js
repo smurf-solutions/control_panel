@@ -17,7 +17,7 @@ var InvoicesTableComponent = (function () {
     }
     InvoicesTableComponent.prototype.getSum = function (key) {
         if (!this.invoices)
-            return;
+            return 0;
         return this.invoices.reduce(function (a, b) { return a + (b.data && b.data[key] ? parseFloat(b.data[key]) : 0); }, 0);
     };
     InvoicesTableComponent.prototype.orderBy = function (key) {

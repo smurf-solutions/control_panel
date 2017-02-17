@@ -9,10 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
-var flex_layout_1 = require('@angular/flex-layout');
+var modules_js_1 = require('@sys/modules.js');
 var export_component_js_1 = require('./export.component.js');
 var invoice_sheet_component_js_1 = require('./invoice-sheet/invoice-sheet.component.js');
 var ExportModule = (function () {
@@ -20,7 +18,7 @@ var ExportModule = (function () {
     }
     ExportModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, material_1.MaterialModule, flex_layout_1.FlexLayoutModule,
+            imports: [modules_js_1.SysModules,
                 router_1.RouterModule.forChild([{ path: 'Print', component: export_component_js_1.ExportComponent }])
             ],
             declarations: [export_component_js_1.ExportComponent, invoice_sheet_component_js_1.InvoiceSheetComponent],

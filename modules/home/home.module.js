@@ -10,10 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var material_1 = require('@angular/material');
-var flex_layout_1 = require('@angular/flex-layout');
-var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
+var modules_js_1 = require('@sys/modules.js');
 var home_component_js_1 = require('./home.component.js');
 var HomeModule = (function () {
     function HomeModule() {
@@ -23,10 +20,7 @@ var HomeModule = (function () {
             declarations: [home_component_js_1.HomeComponent],
             imports: [
                 router_1.RouterModule.forChild([{ path: '', component: home_component_js_1.HomeComponent }]),
-                material_1.MaterialModule,
-                flex_layout_1.FlexLayoutModule,
-                common_1.CommonModule,
-                forms_1.FormsModule
+                modules_js_1.SysModules
             ]
         }), 
         __metadata('design:paramtypes', [])

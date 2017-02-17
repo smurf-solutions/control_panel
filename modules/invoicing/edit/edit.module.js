@@ -9,13 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var material_1 = require('@angular/material');
 var router_1 = require('@angular/router');
-var flex_layout_1 = require('@angular/flex-layout');
-var forms_1 = require('@angular/forms');
-var pipes_1 = require('@sys/pipes');
-var material_2 = require('@sys/material');
+var modules_js_1 = require('@sys/modules.js');
 var edit_page_component_js_1 = require('./edit-page.component.js');
 var edit_modal_component_js_1 = require('./edit-modal.component.js');
 var invoice_form_component_js_1 = require('./invoice-form/invoice-form.component.js');
@@ -25,9 +20,8 @@ var EditModule = (function () {
     EditModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule, material_1.MaterialModule, flex_layout_1.FlexLayoutModule, forms_1.FormsModule,
+                modules_js_1.SysModules,
                 router_1.RouterModule.forChild([{ path: 'Edit', component: edit_page_component_js_1.EditPageComponent }]),
-                pipes_1.PipeModules, material_2.AppMaterialModules
             ],
             declarations: [edit_page_component_js_1.EditPageComponent, edit_modal_component_js_1.EditModalComponent, invoice_form_component_js_1.InvoiceFormComponent],
             exports: [edit_page_component_js_1.EditPageComponent, edit_modal_component_js_1.EditModalComponent],

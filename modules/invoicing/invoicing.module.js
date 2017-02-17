@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var material_1 = require('@angular/material');
 var list_module_js_1 = require('./list/list.module.js');
 var view_module_js_1 = require('./view/view.module.js');
 var edit_module_js_1 = require('./edit/edit.module.js');
@@ -22,7 +21,6 @@ var InvoicingModule = (function () {
     InvoicingModule = __decorate([
         core_1.NgModule({
             imports: [
-                material_1.MaterialModule.forRoot(),
                 router_1.RouterModule.forChild([{ path: '', redirectTo: '/Invoicing/List', pathMatch: 'full' }]),
                 list_module_js_1.ListModule,
                 view_module_js_1.ViewModule,
