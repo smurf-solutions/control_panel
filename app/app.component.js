@@ -22,7 +22,6 @@ var AppComponent = (function () {
         this.snack = snack;
         this.title = 'Admin panel ';
         this.Config = AppConfig;
-        this.leftbarMenuController = 'base';
         this.state = {};
         this.app.layout = this;
         this.app.company = company_config_js_1.CompanyConfig;

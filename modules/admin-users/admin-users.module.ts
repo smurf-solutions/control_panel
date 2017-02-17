@@ -1,17 +1,17 @@
-import { NgModule }             from '@angular/core';
-import { RouterModule }         from '@angular/router';
+import { NgModule }                from '@angular/core';
+import { RouterModule }            from '@angular/router';
 
-import { SysModules }           from '@sys/modules.js';
+import { SysModules }              from '@sys/modules.js';
 
-import { AdminUsersComponent }  from './admin-users.component.js';
+import { AdminUsersListComponent } from './list/admin-users-list.component.js';
 
 
 @NgModule({
 	imports: [ 
-		RouterModule.forChild([{ path:'', component: AdminUsersComponent }]),
+		RouterModule.forChild([{ path:'', component: AdminUsersListComponent }]),
 		SysModules
 	],
-	declarations: [ AdminUsersComponent ],
-	exports: [ AdminUsersComponent ]
+	declarations: [ AdminUsersListComponent ],
+	exports: [ AdminUsersListComponent ]
 })
 export class AdminUsersModule {}

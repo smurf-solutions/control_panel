@@ -13,25 +13,25 @@
 					</span>
 				</button>
 				
-				<button md-button routerLink="Home" routerLinkActive="active">
+				<button md-button routerLink="Home" routerLinkActive="active" (click)="leftbarMenuController=Home">
 					<md-icon style1="font-size:1.15rem;">home</md-icon> 
-					<label>Начало</label>
+					<label>{{ 'Home'|translate }}</label>
 				</button>
 				<div *ngFor="let group of Config.Navigation">
-					<md-toolbar color="transparent" (click)="leftbarMenuController=group.key" style="font-size:1rem!important">
-						<span fxFlex ><md-icon>{{ group.icon }}</md-icon> {{ group.title }} </span>
+					<md-toolbar color="transparent"  routerLinkActive="active" (click)="leftbarMenuController=group.title" style="font-size:1rem!important">
+						<span fxFlex ><md-icon>{{ group.icon }}</md-icon> {{ group.title | translate }} </span>
 						<span style="margin-right:-15px">
-							<md-icon *ngIf="leftbarMenuController!==group.key">chevron_right</md-icon>
-							<md-icon *ngIf="leftbarMenuController==group.key">expand_more</md-icon>
+							<md-icon *ngIf="leftbarMenuController!==group.title">chevron_right</md-icon>
+							<md-icon *ngIf="leftbarMenuController==group.title">expand_more</md-icon>
 						</span>
 					</md-toolbar>
-					<div *ngIf="leftbarMenuController==group.key">
+					<div *ngIf="leftbarMenuController==group.title">
 						<button  md-button (click)="title=item.title"
 							*ngFor="let item of group.children"
 								routerLink="{{ item.path }}"
 								routerLinkActive="active"
 								title="{{ item.desc }}"
-						>{{ item.title }}</button>
+						>{{ item.title | translate }}</button>
 					</div>
 				</div>
 

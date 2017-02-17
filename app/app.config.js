@@ -2,7 +2,7 @@
 exports.DEMO = true;
 exports.Navigation = [
     {
-        title: 'База',
+        title: 'Base',
         icon: 'storage',
         key: 'base',
         children: [
@@ -37,7 +37,7 @@ exports.Navigation = [
         ]
     },
     {
-        title: 'Дейност',
+        title: 'Activity',
         icon: 'play_for_work',
         key: 'activity',
         children: [
@@ -63,7 +63,7 @@ exports.Navigation = [
             },
         ]
     },
-    { title: 'Анализи',
+    { title: 'Analyses',
         icon: 'trending_up',
         key: 'reports',
         children: [
@@ -79,7 +79,7 @@ exports.Navigation = [
         ]
     },
     {
-        title: 'Админ',
+        title: 'Admin',
         icon: 'tune',
         key: 'admin',
         children: [

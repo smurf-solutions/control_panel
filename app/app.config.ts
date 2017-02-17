@@ -2,7 +2,7 @@
 
 export const Navigation = [
 	{
-        title: 'База',
+        title: 'Base',
 		icon: 'storage',
 		key: 'base',
         children: [
@@ -39,7 +39,7 @@ export const Navigation = [
         ]
     },
 	{
-        title: 'Дейност',
+        title: 'Activity',
 		icon: 'play_for_work',
 		key: 'activity',
         children: [
@@ -65,7 +65,7 @@ export const Navigation = [
 			},
         ]
     },
-	{	title:'Анализи',
+	{	title:'Analyses',
 		icon: 'trending_up',
 		key: 'reports',
 		children: [
@@ -81,7 +81,7 @@ export const Navigation = [
 		]
 	},
 	{
-		title: 'Админ',
+		title: 'Admin',
 		icon: 'tune',
 		key: 'admin',
 		children: [

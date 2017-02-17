@@ -11,18 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var modules_js_1 = require('@sys/modules.js');
-var admin_users_component_js_1 = require('./admin-users.component.js');
+var admin_users_list_component_js_1 = require('./list/admin-users-list.component.js');
 var AdminUsersModule = (function () {
     function AdminUsersModule() {
     }
     AdminUsersModule = __decorate([
         core_1.NgModule({
             imports: [
-                router_1.RouterModule.forChild([{ path: '', component: admin_users_component_js_1.AdminUsersComponent }]),
+                router_1.RouterModule.forChild([{ path: '', component: admin_users_list_component_js_1.AdminUsersListComponent }]),
                 modules_js_1.SysModules
             ],
-            declarations: [admin_users_component_js_1.AdminUsersComponent],
-            exports: [admin_users_component_js_1.AdminUsersComponent]
+            declarations: [admin_users_list_component_js_1.AdminUsersListComponent],
+            exports: [admin_users_list_component_js_1.AdminUsersListComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AdminUsersModule);

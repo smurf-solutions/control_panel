@@ -24,7 +24,7 @@ export class AppComponent  {
 	@ViewChild('rightbar') rightbar: MdSidenav;
 	title = 'Admin panel ';
 	Config = AppConfig;
-	leftbarMenuController = 'base';
+	leftbarMenuController;// = 'base';
 	private state = {};
 
 	constructor(

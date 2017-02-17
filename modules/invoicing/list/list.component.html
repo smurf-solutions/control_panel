@@ -2,7 +2,7 @@
 	<md-toolbar color="transparent">
 			<span fxFlex>
 				<button md-icon-button (click)="app.layout.leftbar.toggle()"><md-icon>menu</md-icon></button>
-				Фактуриране
+				{{ 'Invoicing' | translate }}
 			</span>
 			<span>
 				<label style="margin-right: 1em">
@@ -11,7 +11,7 @@
 						<span md-suffix>{{ listInfo.founded }} / {{ listInfo.all }}</span>
 					</md-input>
 				</label> 
-				<button md-raised-button color="primary" (click)="editInvoiceModal()">Нов</button>
+				<button md-raised-button color="primary" (click)="editInvoiceModal()">{{ 'New'|translate }}</button>
 				<button md-icon-button routerLink="/Invoicing/Print"><md-icon>open_in_new</md-icon></button>
 			</span>
 	</md-toolbar>

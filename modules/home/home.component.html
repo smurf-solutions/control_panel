@@ -1,7 +1,7 @@
 ﻿<md-toolbar color="transparent">
 	<div fxFlex>
 		<button md-icon-button (click)="app.layout.leftbar.toggle()"><md-icon>menu</md-icon></button>
-		Начало
+		{{ 'Home' | translate }}
 	</div>
 </md-toolbar>
 
@@ -11,11 +11,14 @@
 		<md-toolbar color="primary">DB Information</md-toolbar>
 		<br>
 		<md-card-content class="padding">
-			<md-card-subtitle>Данни за връзка с Базата</md-card-subtitle>
-			<md-radio-group name="serv" >
-				<div>URL:  <b>{{ collections.authService.dbUrl }}</b> </div>
-				<div>User: <b>{{ collections.authService.user }}</b> </div>
-			</md-radio-group>
+			<md-card-subtitle>Връзка с Базата</md-card-subtitle>
+			<div>
+				<div>URL : <br><b>{{ collections.authService.dbUrl }}</b> </div>
+				<br>
+				<div>{{'User'|translate}} : <br><b>{{ collections.authService.user }}</b> </div>
+				<br> 
+				&nbsp;
+			</div>
 		</md-card-content>
 		<!--
 		<div>

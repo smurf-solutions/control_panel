@@ -12,20 +12,20 @@ var core_1 = require('@angular/core');
 var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
 var ng2_toasty_1 = require('ng2-toasty');
-var AdminUsersComponent = (function () {
-    function AdminUsersComponent(app, collections, toasty) {
+var AdminUsersListComponent = (function () {
+    function AdminUsersListComponent(app, collections, toasty) {
         this.app = app;
         this.collections = collections;
         this.toasty = toasty;
     }
-    AdminUsersComponent = __decorate([
+    AdminUsersListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            templateUrl: 'admin-users.component.html'
+            templateUrl: 'admin-users-list.component.html'
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object, (typeof (_b = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _b) || Object, ng2_toasty_1.ToastyService])
-    ], AdminUsersComponent);
-    return AdminUsersComponent;
+    ], AdminUsersListComponent);
+    return AdminUsersListComponent;
     var _a, _b;
 }());
-exports.AdminUsersComponent = AdminUsersComponent;
+exports.AdminUsersListComponent = AdminUsersListComponent;

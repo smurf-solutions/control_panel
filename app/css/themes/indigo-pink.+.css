@@ -20,7 +20,7 @@ md-sidenav[color="primary"] md-toolbar {
 
 
 #toasty .toast.toasty-theme-default.toasty-type-info {
-	background-color: #3f51b5; }
+	background-color: #3f51b5}
 	
 
 /*******************/
@@ -28,7 +28,8 @@ md-sidenav[color="primary"] md-toolbar {
 /*******************/
 
 button.active { 
-	background: rgba(0, 0, 0, 0.17) }
+	background: rgba(0, 0, 0, 0.17);
+	border-left: 1px solid }
 
 table.hover tbody tr:hover td, table.hover tbody tr:hover th { 
 	background-color: #dadaff }

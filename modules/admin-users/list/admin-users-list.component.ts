@@ -6,9 +6,9 @@ import { ToastyService }       from 'ng2-toasty';
 
 @Component({
 	moduleId: module.id,
-	templateUrl: 'admin-users.component.html'
+	templateUrl: 'admin-users-list.component.html'
 })
-export class AdminUsersComponent {
+export class AdminUsersListComponent {
 	constructor(
 		public app: SysService,
 		public collections: CollectionsService,
