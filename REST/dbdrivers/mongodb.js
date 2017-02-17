@@ -6,7 +6,9 @@ function find( dbname, collection, params, callback ) {
 		if(err) {
 			console.log( err )
 		} else {
-			db.authenticate( params.token[0]||'', params.token[1]||'', function(err,res){
+			let user = params.token[0] ? params.token[0] : '*';
+			let pass = params.token[1] ? params.token[1] : '*';
+			db.authenticate( user, pass, function(err,res){
 				if( res ) {
 					db.collection( collection )
 					  .find( params.filter || {} )
