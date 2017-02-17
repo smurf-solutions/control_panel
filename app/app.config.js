@@ -77,6 +77,16 @@ exports.Navigation = [
                 path: '/Employees/Reports'
             }
         ]
+    },
+    {
+        title: 'Админ',
+        icon: 'tune',
+        key: 'admin',
+        children: [
+            { title: 'Потребители',
+                path: '/Admin/Users'
+            }
+        ]
     }
 ];
 exports.Routing = [
@@ -93,6 +103,7 @@ exports.Routing = [
     { path: 'Invoicing/Reports', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
     { path: 'Store/Reports', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
     { path: 'Employees/Reports', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
+    { path: 'Admin/Users', loadChildren: 'modules/admin-users/admin-users.module.js#AdminUsersModule' },
 ];
 exports.Styles = [
     "css/themes/indigo-pink.min.css",
@@ -101,3 +112,4 @@ exports.Styles = [
     "css/table.list.css",
     "app.component.css"
 ];
+exports.Db = { "dbUrl": "//localhost:3000/collections/demo/", "user": "siso", "pass": "" };

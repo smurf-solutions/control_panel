@@ -36,7 +36,10 @@ export class AppComponent  {
 	){
 		this.app.layout = this;
 		this.app.company = CompanyConfig;
-		if(this.Config.DEMO) this.snack.open("Режим Демонстрация","х");
+		//if(this.Config.DEMO) this.snack.open("Режим Демонстрация","х");
+		this.collections.authService.dbUrl = AppConfig.Db.dbUrl;
+		this.collections.authService.user  = AppConfig.Db.user;
+		this.collections.authService.pass  = AppConfig.Db.pass;
 	}
 
 getDbName() {

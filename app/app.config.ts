@@ -79,6 +79,16 @@ export const Navigation = [
 				path: '/Employees/Reports'
 			}
 		]
+	},
+	{
+		title: 'Админ',
+		icon: 'tune',
+		key: 'admin',
+		children: [
+			{ title: 'Потребители',
+				path: '/Admin/Users'
+			}
+		]
 	}
 ];
 export const Routing = [
@@ -99,6 +109,8 @@ export const Routing = [
 	{ path: 'Invoicing/Reports',     loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
 	{ path: 'Store/Reports',         loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
 	{ path: 'Employees/Reports',     loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
+//--
+	{ path: 'Admin/Users',           loadChildren: 'modules/admin-users/admin-users.module.js#AdminUsersModule' },
 ];
 
 export const Styles = [
@@ -108,3 +120,5 @@ export const Styles = [
 	"css/table.list.css",
 	"app.component.css"
 ];
+
+export const Db = { "dbUrl": "//localhost:3000/collections/demo/", "user": "siso", "pass": "" };
