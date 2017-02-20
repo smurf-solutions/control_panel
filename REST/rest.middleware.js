@@ -24,16 +24,18 @@ function send( res, ret ) {
 	res.end( ret.toString() );
 }
 
-exports.RESTMiddleware = function RESTMiddleware ( req, res, next ) {
+module.exports = function( req, res, next ) {
 	if (req.url.match(/^\/collections\//)) {		
 		var urlParts = req.url.split("collections/")[1].split("?");
-		var [ dbname, collection ] = urlParts[0].split("/");		
+		var [ dbname, collection ] = urlParts[0].split("/");
 		var params = parser.parseUrlParams( urlParts[1] );
 		params.token = parser.parseToken( req.headers );
-		
-		console.log( params );
-		//console.log(req.headers);
-		//params.access = req.headers.access;
+		if( req.dbUrl ) params.dbUrl = req.dbUrl;
+
+		// DEBUG ONLY
+		params.token = [ 'siso', '1234' ];
+		console.log( params )
+		//// DEBUG ONLY
 		
 		res.setHeader('Content-Type','application/json');
 		

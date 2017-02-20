@@ -4,7 +4,6 @@ import { MdSnackBar }                   from '@angular/material';
 //import { MdDialog }                     from '@angular/material';
 
 import { SysService }                   from '@sys/services';
-//import { AuthService }                   from '@sys/services';
 import { CollectionsService }           from '@sys/services';
 import { LoginModalComponent }          from '@sys/modals';
 
@@ -12,7 +11,6 @@ import * as AppConfig                   from  './app.config.js';
 import { CompanyConfig }                from '../company.config.js';
 
 @Component({
-  //providers: [ AuthService ],
   selector: 'app',
   styleUrls: AppConfig.Styles,
   moduleId: module.id,
@@ -28,18 +26,13 @@ export class AppComponent  {
 	private state = {};
 
 	constructor(
-		//public auth: AuthService,
 		public collections: CollectionsService,
 		public app: SysService,
 		public snack: MdSnackBar,
-		//private dialog: MdDialog
 	){
 		this.app.layout = this;
 		this.app.company = CompanyConfig;
 		//if(this.Config.DEMO) this.snack.open("Режим Демонстрация","х");
-		this.collections.authService.dbUrl = AppConfig.Db.dbUrl;
-		this.collections.authService.user  = AppConfig.Db.user;
-		this.collections.authService.pass  = AppConfig.Db.pass;
 	}
 
 getDbName() {

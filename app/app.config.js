@@ -4,7 +4,6 @@ exports.Navigation = [
     {
         title: 'Base',
         icon: 'storage',
-        key: 'base',
         children: [
             { title: 'Фактури',
                 desc: 'Преглед и редакция на Фактури',
@@ -39,7 +38,6 @@ exports.Navigation = [
     {
         title: 'Activity',
         icon: 'play_for_work',
-        key: 'activity',
         children: [
             { title: 'Хелпдеск',
                 path: '/Helpdesk/Tickets'
@@ -65,7 +63,6 @@ exports.Navigation = [
     },
     { title: 'Analyses',
         icon: 'trending_up',
-        key: 'reports',
         children: [
             { title: 'Търговски',
                 path: '/Invoicing/Reports'
@@ -81,7 +78,6 @@ exports.Navigation = [
     {
         title: 'Admin',
         icon: 'tune',
-        key: 'admin',
         children: [
             { title: 'Потребители',
                 path: '/Admin/Users'
@@ -112,4 +108,3 @@ exports.Styles = [
     "css/table.list.css",
     "app.component.css"
 ];
-exports.Db = { "dbUrl": "//localhost:3000/collections/demo/", "user": "siso", "pass": "" };

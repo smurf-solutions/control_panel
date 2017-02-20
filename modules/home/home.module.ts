@@ -9,8 +9,8 @@ import { HomeComponent }     from './home.component.js';
 @NgModule({
 	declarations: [ HomeComponent ],
 	imports: [
+		SysModules,
 		RouterModule.forChild([{ path: '', component: HomeComponent }]),
-		SysModules
 	]
 })
 export class HomeModule {}

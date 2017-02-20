@@ -17,6 +17,7 @@ import { EditModalComponent }      from './../edit/edit-modal.component.js';
 })
 export class ListComponent {
 	@ViewChild('invoicing_bar') invoicing_bar;
+	loginChanged: any;
 	
 	dialogConfig = { disableClose: false,
 		width: '600px', height: '', position: { top: '', bottom: '', left: '', right: ''}
@@ -31,7 +32,6 @@ export class ListComponent {
 		public collections: CollectionsService,
 		public dialog: MdDialog
 	){}
-	
 	
 	editInvoiceModal( invoice ) {
 		let dialogRef = this.dialog.open( EditModalComponent, this.dialogConfig );
@@ -52,9 +52,15 @@ export class ListComponent {
 	ngOnInit() {
 		this.load();
 		this.app.restore(this, 'invoicing.listInvoices');
+	
+		this.loginChangedEmitter = this.collections.loginChangedEmitter.subscribe( em => {
+			alert(" subriber from COMPNENT");
+		});
+	
 	}
 	ngOnDestroy() {
 		this.app.store( this, 'invoicing.listInvoices', [ 'http', 'invoices' ] );
+		this.loginChangedEmitter.unsubscribe();
 	}
 	
 	load() {

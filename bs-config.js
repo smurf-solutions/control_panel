@@ -4,17 +4,32 @@
 */
 "use strict";
 
+var config = {
+	port     : 3000,
+	folder   : '',
+	dbPrefix : 'collections',
+	dbUrl    : 'mongodb://127.0.0.1:27017/',
+	https    : 'ssl/smurf-bg.com',
+}
+
+
 module.exports = {
-	files : ["**/*.{js, html, css, json}"],
-    watchOptions : { ignored: ['node_modules'] },
+	port: config.port,
+	files : ["**/*.{no-watch}"], watchOptions : { ignored: ['node_modules'] },
 	server : {
-        baseDir : './' ,
-        index : "index.html",
+        baseDir : './'+config.folder,
 		middleware : {
-			2 : require("./REST/middleware.js").RESTMiddleware
+			0 : null,
+			1 : null,
+			//2 : require('comporession')(),
+			3 : function( req,res,next ) { req.dbUrl = config.dbUrl;next() },
+			4 : function( req,res,next ) { req.dbPrefix = config.dbPrefix;next() },
+			5 : require("./REST/rest.middleware.js")
         }
     },
-	https: true,
+	logLevel: "debug",
+	ui: null,
+	https: config.https ? true : false,
 	cors : true,
 	notify: false,
 }

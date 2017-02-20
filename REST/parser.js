@@ -7,8 +7,8 @@
 function parseJson( value ) {
 	var ret = {};
 	try {
-		eval( 'ret = (' + value + ');');
-	} catch( err ) {}
+		eval( 'ret = (' + decodeURIComponent( value ) + ');');
+	} catch( err ) { ret = { _id:0 }  }
 	return ret;
 }
 

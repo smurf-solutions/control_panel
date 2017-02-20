@@ -25,9 +25,6 @@ var AppComponent = (function () {
         this.state = {};
         this.app.layout = this;
         this.app.company = company_config_js_1.CompanyConfig;
-        this.collections.authService.dbUrl = AppConfig.Db.dbUrl;
-        this.collections.authService.user = AppConfig.Db.user;
-        this.collections.authService.pass = AppConfig.Db.pass;
     }
     AppComponent.prototype.getDbName = function () {
         var parser = document.createElement('a');

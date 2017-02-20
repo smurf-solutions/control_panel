@@ -17,7 +17,17 @@ var AdminUsersListComponent = (function () {
         this.app = app;
         this.collections = collections;
         this.toasty = toasty;
+        this.users = [];
     }
+    AdminUsersListComponent.prototype.ngOnInit = function () {
+        this.load();
+    };
+    AdminUsersListComponent.prototype.load = function () {
+        var _this = this;
+        this.collections
+            .get('system.users')
+            .subscribe(function (res) { return _this.users = res.data; });
+    };
     AdminUsersListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

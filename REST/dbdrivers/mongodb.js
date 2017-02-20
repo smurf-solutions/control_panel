@@ -1,11 +1,13 @@
 "use strict";
-let dbUrl = 'mongodb://127.0.0.1:27017/';
+//let dbUrl = 'mongodb://127.0.0.1:27017/';
 
 function find( dbname, collection, params, callback ) {
+	var dbUrl = params.dbUrl
 	require('mongodb').MongoClient.connect(dbUrl + dbname, function(err, db) {
 		if(err) {
 			console.log( err )
 		} else {
+			if( !params.token ) params.token = [];
 			let user = params.token[0] ? params.token[0] : '*';
 			let pass = params.token[1] ? params.token[1] : '*';
 			db.authenticate( user, pass, function(err,res){

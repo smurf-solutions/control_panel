@@ -19,8 +19,8 @@ var HomeModule = (function () {
         core_1.NgModule({
             declarations: [home_component_js_1.HomeComponent],
             imports: [
+                modules_js_1.SysModules,
                 router_1.RouterModule.forChild([{ path: '', component: home_component_js_1.HomeComponent }]),
-                modules_js_1.SysModules
             ]
         }), 
         __metadata('design:paramtypes', [])

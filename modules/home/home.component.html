@@ -11,11 +11,14 @@
 		<md-toolbar color="primary">DB Information</md-toolbar>
 		<br>
 		<md-card-content class="padding">
-			<md-card-subtitle>Връзка с Базата</md-card-subtitle>
+			
 			<div>
-				<div>URL : <br><b>{{ collections.authService.dbUrl }}</b> </div>
-				<br>
-				<div>{{'User'|translate}} : <br><b>{{ collections.authService.user }}</b> </div>
+				<div><md-card-subtitle>База данни:</md-card-subtitle>
+					<b>{{ collections.authService.dbUrl }}</b>
+				</div>
+				<br><br>
+				<div><md-card-subtitle>{{'User'|translate}}:</md-card-subtitle> 
+					<b>{{ collections.authService.user }}</b> </div>
 				<br> 
 				&nbsp;
 			</div>

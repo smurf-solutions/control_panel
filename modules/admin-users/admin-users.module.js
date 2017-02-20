@@ -18,8 +18,8 @@ var AdminUsersModule = (function () {
     AdminUsersModule = __decorate([
         core_1.NgModule({
             imports: [
+                modules_js_1.SysModules,
                 router_1.RouterModule.forChild([{ path: '', component: admin_users_list_component_js_1.AdminUsersListComponent }]),
-                modules_js_1.SysModules
             ],
             declarations: [admin_users_list_component_js_1.AdminUsersListComponent],
             exports: [admin_users_list_component_js_1.AdminUsersListComponent]
