@@ -20,7 +20,8 @@ import { AppComponent }          from 'app/app.component';
   imports:      [
 	BrowserModule,
 	MaterialModule.forRoot(),
-	FlexLayoutModule.forRoot(),
+	//MaterialModule,
+	FlexLayoutModule,
 	HttpModule,
 	ToastyModule.forRoot(),
 	RouterModule.forRoot( AppConfig.Routing.concat([

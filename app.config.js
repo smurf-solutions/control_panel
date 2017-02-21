@@ -44,24 +44,24 @@ AppConfig.Navigation = [
         icon: 'play_for_work',
         children: [
             { title: 'Хелпдеск',
-                path: '/Helpdesk/Tickets'
+                path: 'Helpdesk/Tickets'
             },
             { title: 'Продажби',
                 desc: 'Управлениена продажбите',
-                path: '/Invoicing/Sells'
+                path: 'Invoicing/Sells'
             },
             { title: 'Покупки',
                 desc: 'Управление на разходите',
-                path: '/Expenses'
+                path: 'Expenses'
             },
             { title: 'Ремонти *',
-                path: '/Transfers'
+                path: 'Transfers'
             },
             { title: 'Трансфери *',
-                path: '/Transfers'
+                path: 'Transfers'
             },
             { title: 'Превози *',
-                path: '/Prevoz'
+                path: 'Prevoz'
             },
         ]
     },
@@ -69,13 +69,13 @@ AppConfig.Navigation = [
         icon: 'trending_up',
         children: [
             { title: 'Търговски',
-                path: '/Invoicing/Reports'
+                path: 'Invoicing/Reports'
             },
             { title: 'Склад',
-                path: '/Store/Reports'
+                path: 'Store/Reports'
             },
             { title: 'Персонал',
-                path: '/Employees/Reports'
+                path: 'Employees/Reports'
             }
         ]
     },
@@ -84,14 +84,15 @@ AppConfig.Navigation = [
         icon: 'tune',
         children: [
             { title: 'Потребители',
-                path: '/Admin/Users'
+                path   : 'Admin/Users',
+				module : 'admin-users'
             }
         ]
     }
 ];
 
 AppConfig.Styles = [
-    "css/themes/indigo-pink.min.css",
+    //"css/themes/indigo-pink.min.css",
     "css/themes/indigo-pink.+.css",
     "css/table.data.css",
     "css/table.list.css",

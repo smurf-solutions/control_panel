@@ -30,7 +30,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 material_2.MaterialModule.forRoot(),
-                flex_layout_1.FlexLayoutModule.forRoot(),
+                flex_layout_1.FlexLayoutModule,
                 http_1.HttpModule,
                 ng2_toasty_1.ToastyModule.forRoot(),
                 router_1.RouterModule.forRoot(AppConfig.Routing.concat([

@@ -4,10 +4,11 @@
 		Клиенти
 	</div>
 	<label>
-		<md-input type="search" [(ngModel)]="searchTerm">
-			<span md-prefix><md-icon>search</md-icon></span>
-			<span md-suffix></span>
-		</md-input>
+		<md-input-container>
+			<input mdInput type="search" [(ngModel)]="searchTerm">
+			<span mdPrefix><md-icon>search</md-icon></span>
+			<span mdSuffix></span>
+		</md-input-container>
 		<button md-raised-button color="primary" (click)="newCustomer()">Нов</button>
 	</label>
 </md-toolbar>

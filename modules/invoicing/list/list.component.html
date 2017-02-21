@@ -1,4 +1,4 @@
-<md-sidenav-layout >
+<md-sidenav-container >
 	<md-toolbar color="transparent">
 			<span fxFlex>
 				<button md-icon-button (click)="app.layout.leftbar.toggle()"><md-icon>menu</md-icon></button>
@@ -6,10 +6,11 @@
 			</span>
 			<span>
 				<label style="margin-right: 1em">
-					<md-input type="search" [(ngModel)]="search">
+					<md-input-container>
+						<input mdInput type="search" [(ngModel)]="search">
 						<span md-prefix><md-icon>search</md-icon></span>
 						<span md-suffix>{{ listInfo.founded }} / {{ listInfo.all }}</span>
-					</md-input>
+					</md-input-container>
 				</label> 
 				<button md-raised-button color="primary" (click)="editInvoiceModal()">{{ 'New'|translate }}</button>
 				<button md-icon-button routerLink="/Invoicing/Print"><md-icon>open_in_new</md-icon></button>
@@ -21,13 +22,17 @@
 			<div background="smoke" style="text-align:center; padding-bottom:0.5em">
 				<div>
 					<md-icon class="prefix">date_range</md-icon>  
-					<md-input type="date" placeholder="От"></md-input>
-					<md-input type="date" placeholder="до"></md-input>
+					<md-input-container>
+						<input mdInput type="date" placeholder="От"></md-input-container>
+					<md-input-container>
+						<input mdInput type="date" placeholder="до"></md-input-container>
 				</div>
 				<div>
 					<md-icon class="prefix">№</md-icon>
-					<md-input type="number" placeholder="От"></md-input>
-					<md-input type="number" placeholder="до"></md-input>
+					<md-input-container>
+						<input mdInput type="number" placeholder="От"></md-input-container>
+					<md-input-container>
+						<input mdInput type="number" placeholder="до"></md-input-container>
 				</div>
 				<button md-raised-button color="primary" (click)="load()"><md-icon>filter_list</md-icon> Филтър</button>
 			</div>
@@ -86,5 +91,5 @@
 				></invoice-view>
 			</div>
 	</md-sidenav>
-</md-sidenav-layout>
+</md-sidenav-container>
 
