@@ -20,7 +20,7 @@ var flex_layout_1 = require('@angular/flex-layout');
 var pipes_1 = require('@sys/pipes');
 var not_found_1 = require('@sys/not-found');
 var services_1 = require('@sys/services');
-var app_component_1 = require('./app.component');
+var app_component_1 = require('app/app.component');
 var AppModule = (function () {
     function AppModule(mdIconRegistry) {
         mdIconRegistry.addSvgIconSetInNamespace('icons', 'svg/icons.svg');

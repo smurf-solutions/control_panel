@@ -14,7 +14,7 @@ import { NotFoundComponent, NotFoundModule } from '@sys/not-found';
 import { SysServicesModule }     from '@sys/services';
 
 //import * as AppConfig            from './app.config';
-import { AppComponent }          from './app.component';
+import { AppComponent }          from 'app/app.component';
 
 @NgModule({
   imports:      [
