@@ -1,4 +1,5 @@
-export const CompanyConfig = {
+"use strict";
+var CompanyConfig = {
     "name": "Смърф БГ ООД",
     "uic": "BG22222222",
     "activity": "Сервиз и поддръжка на софтуер",

@@ -53,14 +53,16 @@ export class ListComponent {
 		this.load();
 		this.app.restore(this, 'invoicing.listInvoices');
 	
+		/*
 		this.loginChangedEmitter = this.collections.loginChangedEmitter.subscribe( em => {
 			alert(" subriber from COMPNENT");
 		});
+		*/
 	
 	}
 	ngOnDestroy() {
 		this.app.store( this, 'invoicing.listInvoices', [ 'http', 'invoices' ] );
-		this.loginChangedEmitter.unsubscribe();
+		//this.loginChangedEmitter.unsubscribe();
 	}
 	
 	load() {

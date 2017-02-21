@@ -43,13 +43,9 @@ var ListComponent = (function () {
     ListComponent.prototype.ngOnInit = function () {
         this.load();
         this.app.restore(this, 'invoicing.listInvoices');
-        this.loginChangedEmitter = this.collections.loginChangedEmitter.subscribe(function (em) {
-            alert(" subriber from COMPNENT");
-        });
     };
     ListComponent.prototype.ngOnDestroy = function () {
         this.app.store(this, 'invoicing.listInvoices', ['http', 'invoices']);
-        this.loginChangedEmitter.unsubscribe();
     };
     ListComponent.prototype.load = function () {
         var _this = this;

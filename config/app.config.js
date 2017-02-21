@@ -1,21 +1,25 @@
 "use strict";
-exports.DEMO = true;
-exports.Navigation = [
+var AppConfig = {};
+
+AppConfig.Navigation = [
     {
         title: 'Base',
         icon: 'storage',
         children: [
             { title: 'Фактури',
-                desc: 'Преглед и редакция на Фактури',
-                path: 'Invoicing'
+                desc   : 'Преглед и редакция на Фактури',
+                path   : 'Invoicing',
+				module : 'invoicing'
             },
             { title: 'Клиенти',
-                desc: 'Управление на клиентите',
-                path: 'Customers'
+                desc   : 'Управление на клиентите',
+                path   : 'Customers',
+				module : 'customers'
             },
             { title: 'Продукти',
-                desc: 'Управление на продуктите',
-                path: 'Store/Products'
+                desc   : 'Управление на продуктите',
+                path   : 'Store/Products',
+				module : 'not-installed'
             },
             { title: 'Разходи*',
                 desc: 'Разходни Фактури',
@@ -85,26 +89,30 @@ exports.Navigation = [
         ]
     }
 ];
-exports.Routing = [
-    { path: '', redirectTo: '/Home', pathMatch: 'full' },
-    { path: 'Home', loadChildren: 'modules/home/home.module.js#HomeModule' },
-    { path: 'Invoicing', loadChildren: 'modules/invoicing/invoicing.module.js#InvoicingModule' },
-    { path: 'Customers', loadChildren: 'modules/customers/customers.module.js#CustomersModule' },
-    { path: 'Contragents/Supplyers', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Store/Products', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Employees/List', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Helpdesk/Tickets', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Invoicing/Sells', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Expenses', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Invoicing/Reports', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Store/Reports', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Employees/Reports', loadChildren: 'modules/not-installed/not-installed.js#NotInstalledModule' },
-    { path: 'Admin/Users', loadChildren: 'modules/admin-users/admin-users.module.js#AdminUsersModule' },
-];
-exports.Styles = [
+
+AppConfig.Styles = [
     "css/themes/indigo-pink.min.css",
     "css/themes/indigo-pink.+.css",
     "css/table.data.css",
     "css/table.list.css",
     "app.component.css"
 ];
+
+
+AppConfig.Routing = [
+		{ path: '', redirectTo: '/Home', pathMatch: 'full' },
+		{ path: 'Home', loadChildren: 'modules/home/home.module.js#HomeModule' },
+	];
+	AppConfig.Navigation.forEach( function( p ) {
+		p.children.forEach( function( vv ) {
+			if( vv.module ) {
+				var className = '';
+				vv.module.split('-').forEach( function( word ){	className += word.charAt(0).toUpperCase() + word.slice(1); })
+				AppConfig.Routing.push( {
+					path: vv.path,
+					loadChildren: 'modules/' + vv.module + '/' + vv.module + '.module.js#' + className + 'Module'
+				})
+			}
+		})
+	});
+

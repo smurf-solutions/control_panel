@@ -13,7 +13,7 @@ import { PipeModules }           from '@sys/pipes';
 import { NotFoundComponent, NotFoundModule } from '@sys/not-found';
 import { SysServicesModule }     from '@sys/services';
 
-import * as AppConfig            from './app.config';
+//import * as AppConfig            from './app.config';
 import { AppComponent }          from './app.component';
 
 @NgModule({

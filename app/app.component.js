@@ -13,8 +13,6 @@ var core_2 = require('@angular/core');
 var material_1 = require('@angular/material');
 var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
-var AppConfig = require('./app.config.js');
-var company_config_js_1 = require('../company.config.js');
 var AppComponent = (function () {
     function AppComponent(collections, app, snack) {
         this.collections = collections;
@@ -24,7 +22,7 @@ var AppComponent = (function () {
         this.Config = AppConfig;
         this.state = {};
         this.app.layout = this;
-        this.app.company = company_config_js_1.CompanyConfig;
+        this.app.company = CompanyConfig;
     }
     AppComponent.prototype.getDbName = function () {
         var parser = document.createElement('a');

@@ -20,7 +20,6 @@ var flex_layout_1 = require('@angular/flex-layout');
 var pipes_1 = require('@sys/pipes');
 var not_found_1 = require('@sys/not-found');
 var services_1 = require('@sys/services');
-var AppConfig = require('./app.config');
 var app_component_1 = require('./app.component');
 var AppModule = (function () {
     function AppModule(mdIconRegistry) {

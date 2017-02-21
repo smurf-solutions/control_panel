@@ -7,8 +7,8 @@ import { SysService }                   from '@sys/services';
 import { CollectionsService }           from '@sys/services';
 import { LoginModalComponent }          from '@sys/modals';
 
-import * as AppConfig                   from  './app.config.js';
-import { CompanyConfig }                from '../company.config.js';
+//import * as AppConfig                   from  'app.config.js';
+//import { CompanyConfig }                from '../company.config.js';
 
 @Component({
   selector: 'app',
