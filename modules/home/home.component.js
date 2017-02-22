@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
+var services_3 = require('@sys/services');
 var ng2_toasty_1 = require('ng2-toasty');
 var HomeComponent = (function () {
-    function HomeComponent(app, collections, toasty) {
+    function HomeComponent(app, collections, auth, toasty) {
         this.app = app;
         this.collections = collections;
+        this.auth = auth;
         this.toasty = toasty;
     }
     HomeComponent = __decorate([
@@ -24,9 +26,9 @@ var HomeComponent = (function () {
             styleUrls: ['home.component.css'],
             templateUrl: 'home.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object, (typeof (_b = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _b) || Object, ng2_toasty_1.ToastyService])
+        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object, (typeof (_b = typeof services_3.CollectionsService !== 'undefined' && services_3.CollectionsService) === 'function' && _b) || Object, (typeof (_c = typeof services_2.AuthService !== 'undefined' && services_2.AuthService) === 'function' && _c) || Object, ng2_toasty_1.ToastyService])
     ], HomeComponent);
     return HomeComponent;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 exports.HomeComponent = HomeComponent;

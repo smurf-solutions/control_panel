@@ -14,21 +14,33 @@ var material_1 = require('@angular/material');
 var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
 var AppComponent = (function () {
-    function AppComponent(collections, app, snack) {
-        this.collections = collections;
+    function AppComponent(auth, app, snack) {
+        this.auth = auth;
         this.app = app;
         this.snack = snack;
         this.title = 'Admin panel ';
         this.Config = AppConfig;
         this.state = {};
+        this.progress = 0;
         this.app.layout = this;
         this.app.company = CompanyConfig;
+        this.initProgressBar();
     }
+    AppComponent.prototype.initProgressBar = function () {
+        var _this = this;
+        var XMLHttpRequest_originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function () {
+            _this.progress++;
+            this.addEventListener('load', function () {
+                _this.progress--;
+            });
+            XMLHttpRequest_originalOpen.apply(this, arguments);
+        };
+    };
     AppComponent.prototype.getDbName = function () {
         var parser = document.createElement('a');
-        parser.href = this.collections.authService.dbUrl;
+        parser.href = this.auth.dbUrl;
         return parser.hostname + '  ' + parser.pathname.replace('/collections/', '').replace('/', ' ');
-        return this.collections.authService.dbUrl;
     };
     AppComponent.prototype.store = function () {
         this.state.leftbar = {
@@ -81,7 +93,7 @@ var AppComponent = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_c = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _c) || Object, (typeof (_d = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _d) || Object, material_1.MdSnackBar])
+        __metadata('design:paramtypes', [(typeof (_c = typeof services_2.AuthService !== 'undefined' && services_2.AuthService) === 'function' && _c) || Object, (typeof (_d = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _d) || Object, material_1.MdSnackBar])
     ], AppComponent);
     return AppComponent;
     var _a, _b, _c, _d;

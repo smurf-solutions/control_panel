@@ -11,12 +11,17 @@ import { FlexLayoutModule }      from '@angular/flex-layout';
 import { PipeModules }           from '@sys/pipes';
 
 import { NotFoundComponent, NotFoundModule } from '@sys/not-found';
+import { AuthService }           from '@sys/services';
 import { SysServicesModule }     from '@sys/services';
+//import { SvetlioService }        from '@sys/services';
 
 //import * as AppConfig            from './app.config';
 import { AppComponent }          from 'app/app.component';
 
+
+
 @NgModule({
+  providers: [ AuthService ],
   imports:      [
 	BrowserModule,
 	MaterialModule.forRoot(),

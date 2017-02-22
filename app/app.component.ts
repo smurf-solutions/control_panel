@@ -4,8 +4,9 @@ import { MdSnackBar }                   from '@angular/material';
 //import { MdDialog }                     from '@angular/material';
 
 import { SysService }                   from '@sys/services';
-import { CollectionsService }           from '@sys/services';
-import { LoginModalComponent }          from '@sys/modals';
+import { AuthService }                  from '@sys/services';
+//import { CollectionsService }           from '@sys/services';
+//import { LoginModalComponent }          from '@sys/modals';
 
 //import * as AppConfig                   from  'app.config.js';
 //import { CompanyConfig }                from '../company.config.js';
@@ -24,24 +25,38 @@ export class AppComponent  {
 	Config = AppConfig;
 	leftbarMenuController;// = 'base';
 	private state = {};
+	progress = 0;
 
 	constructor(
-		public collections: CollectionsService,
+		//public collections: CollectionsService,
+		public auth: AuthService,
 		public app: SysService,
 		public snack: MdSnackBar,
 	){
 		this.app.layout = this;
 		this.app.company = CompanyConfig;
 		//if(this.Config.DEMO) this.snack.open("Режим Демонстрация","х");
+		this.initProgressBar()
+	}
+	
+	private initProgressBar() {
+		let _this = this;
+		let XMLHttpRequest_originalOpen = XMLHttpRequest.prototype.open;
+		XMLHttpRequest.prototype.open = function() {
+			_this.progress++;
+			this.addEventListener('load', function() {
+				_this.progress--;
+			});
+			XMLHttpRequest_originalOpen.apply(this, arguments);
+		};
 	}
 
-getDbName() {
-	let parser = document.createElement('a');
-	parser.href = this.collections.authService.dbUrl ;
-	
-	return parser.hostname +'  '+ parser.pathname.replace('/collections/','').replace('/',' ');
-	return this.collections.authService.dbUrl;
-}
+	getDbName() {
+		let parser = document.createElement('a');
+		parser.href = this.auth.dbUrl ;
+		
+		return parser.hostname +'  '+ parser.pathname.replace('/collections/','').replace('/',' ');
+	}
 	
 	/**
 	Store and Restore Application state

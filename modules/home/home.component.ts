@@ -1,6 +1,7 @@
 import { Component }          from '@angular/core';
 
 import { SysService }         from '@sys/services';
+import { AuthService }        from '@sys/services';
 import { CollectionsService } from '@sys/services';
 import { ToastyService }      from 'ng2-toasty';
 
@@ -21,6 +22,7 @@ export class HomeComponent {
 	constructor(
 		public app: SysService,
 		public collections: CollectionsService,
+		public auth: AuthService,
 		public toasty: ToastyService
 	) {}
 	

@@ -20,6 +20,7 @@ var flex_layout_1 = require('@angular/flex-layout');
 var pipes_1 = require('@sys/pipes');
 var not_found_1 = require('@sys/not-found');
 var services_1 = require('@sys/services');
+var services_2 = require('@sys/services');
 var app_component_1 = require('app/app.component');
 var AppModule = (function () {
     function AppModule(mdIconRegistry) {
@@ -27,6 +28,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
+            providers: [services_1.AuthService],
             imports: [
                 platform_browser_1.BrowserModule,
                 material_2.MaterialModule.forRoot(),
@@ -37,7 +39,7 @@ var AppModule = (function () {
                     { path: '**', component: not_found_1.NotFoundComponent }
                 ]), { useHash: true }),
                 not_found_1.NotFoundModule,
-                services_1.SysServicesModule,
+                services_2.SysServicesModule,
                 modals_1.ModalsModule,
                 pipes_1.PipeModules
             ],
