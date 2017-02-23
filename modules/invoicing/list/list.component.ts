@@ -4,6 +4,9 @@ import { MdDialog }                from '@angular/material';
 
 import { SysService }              from '@sys/services';
 import { CollectionsService }      from '@sys/services';
+import { EventsService }           from '@sys/services';
+import { AuthService }             from '@sys/services';
+
 import * as InvoicingConfig        from './../invoicing.config.js';
 
 import { InvoiceViewComponent }    from './../view/invoice-view/invoice-view.component.js';
@@ -17,21 +20,38 @@ import { EditModalComponent }      from './../edit/edit-modal.component.js';
 })
 export class ListComponent {
 	@ViewChild('invoicing_bar') invoicing_bar;
-	loginChanged: any;
-	
+	onLoginChanged : Event;
 	dialogConfig = { disableClose: false,
 		width: '600px', height: '', position: { top: '', bottom: '', left: '', right: ''}
 	}
-
 	listInfo = InvoicingConfig.listConfig;
 	exportList = {};
 	
-
 	constructor( 
-		public app: SysService,
-		public collections: CollectionsService,
-		public dialog: MdDialog
+		public app : SysService,
+		public collections : CollectionsService,
+		public dialog : MdDialog,
+		public on : EventsService,
+		public auth: AuthService
 	){}
+	
+	ngOnInit() {
+		this.load();
+		this.app.restore(this, 'invoicing.listInvoices');
+		this.onLoginChanged = this.on.loginChanged.subscribe( res => this.load() )
+	}
+	ngOnDestroy() {
+		this.app.store( this, 'invoicing.listInvoices', [ 'http', 'invoices' ] );
+		this.onLoginChanged.unsubscribe();
+	}
+	
+	
+	load() {
+		this.selected = null;
+		this.collections
+			.get( 'invoices' )
+			.subscribe( res => this.invoices = res.data, err => this.invoices = [] );
+	}
 	
 	editInvoiceModal( invoice ) {
 		let dialogRef = this.dialog.open( EditModalComponent, this.dialogConfig );
@@ -48,31 +68,6 @@ export class ListComponent {
 		}
 		//dialogRef.afterClosed().subscribe( res=> { alert(res} );
 	}
-	
-	ngOnInit() {
-		this.load();
-		this.app.restore(this, 'invoicing.listInvoices');
-	
-		/*
-		this.loginChangedEmitter = this.collections.loginChangedEmitter.subscribe( em => {
-			alert(" subriber from COMPNENT");
-		});
-		*/
-	
-	}
-	ngOnDestroy() {
-		this.app.store( this, 'invoicing.listInvoices', [ 'http', 'invoices' ] );
-		//this.loginChangedEmitter.unsubscribe();
-	}
-	
-	load() {
-		this.selected = null;
-		this.collections
-			.get( 'invoices' )
-			.subscribe( res => this.invoices = res.data );
-	}
-	
-	
 	
 	/*
 	getPageItems() {

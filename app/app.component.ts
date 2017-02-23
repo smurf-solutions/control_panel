@@ -1,12 +1,9 @@
 ﻿import { Component, ViewEncapsulation } from '@angular/core';
 import { ViewChild, MdSidenav }         from '@angular/core';
-import { MdSnackBar }                   from '@angular/material';
-//import { MdDialog }                     from '@angular/material';
 
 import { SysService }                   from '@sys/services';
 import { AuthService }                  from '@sys/services';
-//import { CollectionsService }           from '@sys/services';
-//import { LoginModalComponent }          from '@sys/modals';
+import { LanguageService }              from '@sys/services';
 
 //import * as AppConfig                   from  'app.config.js';
 //import { CompanyConfig }                from '../company.config.js';
@@ -28,14 +25,12 @@ export class AppComponent  {
 	progress = 0;
 
 	constructor(
-		//public collections: CollectionsService,
-		public auth: AuthService,
-		public app: SysService,
-		public snack: MdSnackBar,
+		public auth : AuthService,
+		public app  : SysService,
+		public lang : LanguageService  
 	){
 		this.app.layout = this;
 		this.app.company = CompanyConfig;
-		//if(this.Config.DEMO) this.snack.open("Режим Демонстрация","х");
 		this.initProgressBar()
 	}
 	

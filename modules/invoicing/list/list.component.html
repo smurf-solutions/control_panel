@@ -6,9 +6,9 @@
 			</span>
 			<span>
 				<label style="margin-right: 1em">
+					<span md-prefix><md-icon class="prefix">search</md-icon></span>
 					<md-input-container>
 						<input mdInput type="search" [(ngModel)]="search">
-						<span md-prefix><md-icon>search</md-icon></span>
 						<span md-suffix>{{ listInfo.founded }} / {{ listInfo.all }}</span>
 					</md-input-container>
 				</label> 
@@ -23,18 +23,18 @@
 				<div>
 					<md-icon class="prefix">date_range</md-icon>  
 					<md-input-container>
-						<input mdInput type="date" placeholder="От"></md-input-container>
+						<input mdInput type="date" placeholder="{{ 'From'|translate }}"></md-input-container>
 					<md-input-container>
-						<input mdInput type="date" placeholder="до"></md-input-container>
+						<input mdInput type="date" placeholder="{{ 'To'|translate }}"></md-input-container>
 				</div>
 				<div>
-					<md-icon class="prefix">№</md-icon>
+					<md-icon class="prefix">{{ '#'|translate }}</md-icon>
 					<md-input-container>
-						<input mdInput type="number" placeholder="От"></md-input-container>
+						<input mdInput type="number" placeholder="{{ 'From'|translate }}"></md-input-container>
 					<md-input-container>
-						<input mdInput type="number" placeholder="до"></md-input-container>
+						<input mdInput type="number" placeholder="{{ 'To'|translate }}"></md-input-container>
 				</div>
-				<button md-raised-button color="primary" (click)="load()"><md-icon>filter_list</md-icon> Филтър</button>
+				<button md-raised-button color="primary" (click)="load()"><md-icon>filter_list</md-icon> {{ 'Filter'|translate }}</button>
 			</div>
 			
 			<br>

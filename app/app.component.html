@@ -1,4 +1,4 @@
-<md-progress-bar *ngIf="progress > 0" mode="indeterminate" style="position:fixed;z-index:1;top:0"></md-progress-bar>
+<md-progress-bar *ngIf="progress > 0" mode="indeterminate" style="position:fixed;z-index:1001;top:0"></md-progress-bar>
 <md-sidenav-container>
 
         <md-sidenav #leftbar color="primary" align="start" mode="side" opened="true" 
@@ -36,11 +36,22 @@
 					</div>
 				</div>
 
+				
+				<md-toolbar color="transparent">
+					<button *ngFor="let l of lang.avaibleDictionaries" 
+							md-icon-button title="{{ l.title }}" 
+							(click)="lang.changeLang( l.iso )"
+							[style.color]="lang.lang==l.iso?'white':''">
+						{{ l.iso | uppercase }}</button>
+				</md-toolbar>
+				
+				<!--
 				<md-toolbar color="transparent" >
 					<button md-icon-button style="margin-top:-0.3em" title="Купи модул"><md-icon>extension</md-icon></button>
 					<button md-icon-button style="margin-top:-0.3em" title="Документация"><md-icon>explore</md-icon></button>
 					<button md-icon-button style="margin-top:-0.3em" title="Свържи се с нас"><md-icon>question_answer</md-icon></button>
 				</md-toolbar>
+				-->
 
 			</div>
 		</md-sidenav>

@@ -12,19 +12,40 @@ var core_1 = require('@angular/core');
 var material_1 = require('@angular/material');
 var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
+var services_3 = require('@sys/services');
+var services_4 = require('@sys/services');
 var InvoicingConfig = require('./../invoicing.config.js');
 var edit_modal_component_js_1 = require('./../edit/edit-modal.component.js');
 var ListComponent = (function () {
-    function ListComponent(app, collections, dialog) {
+    function ListComponent(app, collections, dialog, on, auth) {
         this.app = app;
         this.collections = collections;
         this.dialog = dialog;
+        this.on = on;
+        this.auth = auth;
         this.dialogConfig = { disableClose: false,
             width: '600px', height: '', position: { top: '', bottom: '', left: '', right: '' }
         };
         this.listInfo = InvoicingConfig.listConfig;
         this.exportList = {};
     }
+    ListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.load();
+        this.app.restore(this, 'invoicing.listInvoices');
+        this.onLoginChanged = this.on.loginChanged.subscribe(function (res) { return _this.load(); });
+    };
+    ListComponent.prototype.ngOnDestroy = function () {
+        this.app.store(this, 'invoicing.listInvoices', ['http', 'invoices']);
+        this.onLoginChanged.unsubscribe();
+    };
+    ListComponent.prototype.load = function () {
+        var _this = this;
+        this.selected = null;
+        this.collections
+            .get('invoices')
+            .subscribe(function (res) { return _this.invoices = res.data; }, function (err) { return _this.invoices = []; });
+    };
     ListComponent.prototype.editInvoiceModal = function (invoice) {
         var dialogRef = this.dialog.open(edit_modal_component_js_1.EditModalComponent, this.dialogConfig);
         if (invoice) {
@@ -39,20 +60,6 @@ var ListComponent = (function () {
             dialogRef.componentInstance.customer = { company: {}, address: {}, contacts: {} };
             dialogRef.componentInstance.payment = {};
         }
-    };
-    ListComponent.prototype.ngOnInit = function () {
-        this.load();
-        this.app.restore(this, 'invoicing.listInvoices');
-    };
-    ListComponent.prototype.ngOnDestroy = function () {
-        this.app.store(this, 'invoicing.listInvoices', ['http', 'invoices']);
-    };
-    ListComponent.prototype.load = function () {
-        var _this = this;
-        this.selected = null;
-        this.collections
-            .get('invoices')
-            .subscribe(function (res) { return _this.invoices = res.data; });
     };
     ListComponent.prototype.getPagesNum = function () {
         return Math.ceil(this.listInfo.founded / this.listInfo.perPage);
@@ -73,9 +80,9 @@ var ListComponent = (function () {
             styleUrls: ['list.component.css'],
             templateUrl: 'list.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object, (typeof (_b = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _b) || Object, material_1.MdDialog])
+        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _a) || Object, (typeof (_b = typeof services_2.CollectionsService !== 'undefined' && services_2.CollectionsService) === 'function' && _b) || Object, material_1.MdDialog, (typeof (_c = typeof services_3.EventsService !== 'undefined' && services_3.EventsService) === 'function' && _c) || Object, (typeof (_d = typeof services_4.AuthService !== 'undefined' && services_4.AuthService) === 'function' && _d) || Object])
     ], ListComponent);
     return ListComponent;
-    var _a, _b;
+    var _a, _b, _c, _d;
 }());
 exports.ListComponent = ListComponent;

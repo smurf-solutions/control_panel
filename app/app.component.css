@@ -40,8 +40,10 @@ button[md-button], button[md-raised-button] {
 button[md-button] md-icon, button[md-raised-button] md-icon { 
 	font-size:1em!important; 
 	width:1em; 
-	line-height:1.4em!important; 
+	line-height:1.6em!important; 
 	margin-right:0.5em }
+button[md-button] md-icon.right, button[md-raised-button] md-icon.right { 
+	margin-right:0; margin-left:0.5em }
 
 md-sidenav { 
 	box-shadow: none!important; 

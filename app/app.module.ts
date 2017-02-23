@@ -2,7 +2,6 @@ import { NgModule }              from '@angular/core';
 import { BrowserModule }         from '@angular/platform-browser';
 import { RouterModule }          from '@angular/router';
 import { MdIconRegistry }        from '@angular/material';
-import { HttpModule }            from '@angular/http';
 import { ToastyModule }          from 'ng2-toasty';
 import { ModalsModule }          from '@sys/modals';
 
@@ -10,30 +9,24 @@ import { MaterialModule }        from '@angular/material';
 import { FlexLayoutModule }      from '@angular/flex-layout';
 import { PipeModules }           from '@sys/pipes';
 
-import { NotFoundComponent, NotFoundModule } from '@sys/not-found';
-import { AuthService }           from '@sys/services';
-import { SysServicesModule }     from '@sys/services';
-//import { SvetlioService }        from '@sys/services';
+import { NotFoundComponent, NotFoundModule }                             from '@sys/not-found';
+import { SysServicesModule_0, SysServicesModule_1, SysServicesModule_2 } from '@sys/services';
 
-//import * as AppConfig            from './app.config';
 import { AppComponent }          from 'app/app.component';
-
+//import * as AppConfig            from './app.config';
 
 
 @NgModule({
-  providers: [ AuthService ],
   imports:      [
 	BrowserModule,
 	MaterialModule.forRoot(),
-	//MaterialModule,
 	FlexLayoutModule,
-	HttpModule,
 	ToastyModule.forRoot(),
 	RouterModule.forRoot( AppConfig.Routing.concat([
             { path:'**', component:NotFoundComponent}
         ]), { useHash: true } ),
 	NotFoundModule,
-	SysServicesModule,
+	SysServicesModule_0, SysServicesModule_1, SysServicesModule_2,
 	ModalsModule,
 	PipeModules
   ],

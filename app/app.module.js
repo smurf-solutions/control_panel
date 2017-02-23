@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
 var material_1 = require('@angular/material');
-var http_1 = require('@angular/http');
 var ng2_toasty_1 = require('ng2-toasty');
 var modals_1 = require('@sys/modals');
 var material_2 = require('@angular/material');
@@ -20,7 +19,6 @@ var flex_layout_1 = require('@angular/flex-layout');
 var pipes_1 = require('@sys/pipes');
 var not_found_1 = require('@sys/not-found');
 var services_1 = require('@sys/services');
-var services_2 = require('@sys/services');
 var app_component_1 = require('app/app.component');
 var AppModule = (function () {
     function AppModule(mdIconRegistry) {
@@ -28,18 +26,16 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            providers: [services_1.AuthService],
             imports: [
                 platform_browser_1.BrowserModule,
                 material_2.MaterialModule.forRoot(),
                 flex_layout_1.FlexLayoutModule,
-                http_1.HttpModule,
                 ng2_toasty_1.ToastyModule.forRoot(),
                 router_1.RouterModule.forRoot(AppConfig.Routing.concat([
                     { path: '**', component: not_found_1.NotFoundComponent }
                 ]), { useHash: true }),
                 not_found_1.NotFoundModule,
-                services_2.SysServicesModule,
+                services_1.SysServicesModule_0, services_1.SysServicesModule_1, services_1.SysServicesModule_2,
                 modals_1.ModalsModule,
                 pipes_1.PipeModules
             ],
