@@ -7,7 +7,8 @@ import { Component }    from '@angular/core';
   templateUrl: 'edit-modal.component.html'
 })
 export class EditModalComponent {
-	title    = "Фактура";
+	//title    = "Фактура";
+	_id      = 0
 	invoice  = {};
 	customer = {};
 	payment  = {};

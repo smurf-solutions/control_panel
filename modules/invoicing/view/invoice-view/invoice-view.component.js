@@ -18,7 +18,7 @@ var InvoiceViewComponent = (function () {
             moduleId: module.id,
             styleUrls: ['invoice-view.component.css'],
             templateUrl: 'invoice-view.component.html',
-            inputs: ['invoice', 'customer', 'products', 'payment']
+            inputs: ['_id', 'invoice', 'customer', 'products', 'payment']
         }), 
         __metadata('design:paramtypes', [])
     ], InvoiceViewComponent);

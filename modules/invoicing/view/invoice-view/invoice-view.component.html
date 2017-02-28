@@ -1,14 +1,14 @@
-<h2 style="text-align:center">Фактура</h2>
+<h2 style="text-align:center">{{ 'Invoice'|translate }}</h2>
 
 <div *ngIf="invoice">
 	<table class="list">
-		<tr><th align="right">Номер: </th><td>{{ invoice.number }}</td></tr>
-		<tr><th align="right">Дата:  </th><td>{{ invoice.date | date :'dd.MM.yyyy' }}</td></tr>
-		<tr><th align="right">Клиент:</th><td>{{ customer.company.name }}</td></tr>
-		<tr><th align="right">Град:  </th><td>{{ customer.address.city }}</td></tr>
-		<tr><th align="right">Адрес: </th><td>{{ customer.address.locale }}</td></tr>
-		<tr><th align="right">Тел.:  </th><td>{{ customer.contacts.phone }}</td></tr>
-		<tr><th align="right">Email: </th><td>{{ customer.contacts.email }}</td></tr>
+		<tr><th align="right">{{ 'Number'|translate }}: </th><td>{{ invoice?.number }}</td></tr>
+		<tr><th align="right">{{ 'Date'|translate }}:  </th><td>{{ invoice?.date | date :'dd.MM.yyyy' }}</td></tr>
+		<tr><th align="right">{{ 'Customer'|translate }}:</th><td>{{ customer?.company?.name }}</td></tr>
+		<tr><th align="right">{{ 'City'|translate }}:  </th><td>{{ customer?.address?.city }}</td></tr>
+		<tr><th align="right">{{ 'Address'|translate }}: </th><td>{{ customer?.address?.locale }}</td></tr>
+		<tr><th align="right">{{ 'Phone'|translate }}:  </th><td>{{ customer?.contacts?.phone }}</td></tr>
+		<tr><th align="right">{{ 'Email'|translate }}: </th><td>{{ customer?.contacts?.email }}</td></tr>
 	</table>
 	
 	<br><br>
@@ -16,13 +16,13 @@
 	<table class="data">
 		<thead>
 			<tr>
-				<th align="left">  Продукт</th>
-				<th align="right"> Ед.Ц.</th>
-				<th align="center">Кол.</th>
-				<th align="right"> Цена</th>
+				<th align="left">  {{ 'Products'|translate }}</th>
+				<th align="right"> {{ 'Unit P.'|translate }}</th>
+				<th align="center">{{ 'Qty'|translate }}</th>
+				<th align="right"> {{ 'Price'|translate }}</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody *ngIf="products">
 			<tr *ngFor="let p of products">
 				<td align="left"> {{ p.name }}</td>
 				<td align="right">{{ p.uprice | number : '.2-2' }}</td>
@@ -31,18 +31,23 @@
 			</tr>
 		</tbody>
 		<tfoot>
-			<tr><td align="right" colspan="3">Сума:</td><td align="right">{{ invoice.sum | number:'.2-2' }}</td></tr>
-			<tr><td align="right" colspan="3">ДДС:</td><td align="right">{{ invoice.vat | number:'.2-2' }}</td></tr>
-			<tr><th align="right" colspan="3">Всичко:</th><th align="right">{{ invoice.total | number:'.2-2' }}</th></tr>
+			<tr><td align="right" colspan="3">{{ 'Sum'|translate }}:</td><td align="right">{{ invoice?.sum | number:'.2-2' }}</td></tr>
+			<tr><td align="right" colspan="3">{{ 'VAT'|translate }}:</td><td align="right">{{ invoice?.vat | number:'.2-2' }}</td></tr>
+			<tr><th align="right" colspan="3">{{ 'Total'|translate }}:</th><th align="right">{{ invoice?.total | number:'.2-2' }}</th></tr>
 		</tfoot>
 	</table>
 	
-	<div>Срок за плащане: <b>{{ invoice.date_pay | date : "dd.MM.yyyy"  }}</b></div>
+	<div>{{ 'Payment period'|translate }}: <b>{{ invoice?.date_pay | date : "dd.MM.yyyy"  }}</b></div>
 	
 	<table style="border:1px solid;width:100%">
-		<tr><th align="left" width="50%">Начин на плащане:</th><th align="left">{{ payment.title }}</th></tr>
-		<tr *ngFor="let data of payment.data"><td >{{ data.title }}</td><td>{{ data.value }}</td></tr>
+		<tr><th align="left" width="50%">{{ 'Payment method'|translate }}:</th><th align="left">{{ payment?.title|translate }}</th></tr>
+		<tr *ngFor="let data of payment.data"><td >{{ data?.title }}</td><td>{{ data?.value }}</td></tr>
 	</table>
 	
-	<div *ngIf="invoice.note"><i>Забележка: {{ invoice.note }}</i></div>
+	<div *ngIf="invoice.note"><i>{{ 'Note'|translate }}: <b>{{ invoice?.note }}</b></i></div>
+</div>
+
+<div style="color:#aaa;font-size:0.8em">
+	<br><br>
+	ID: {{ _id }}
 </div>

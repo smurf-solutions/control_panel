@@ -9,13 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var material_1 = require('@angular/material');
 var ng2_toasty_1 = require('ng2-toasty');
 var services_1 = require('@sys/services');
 var InvoiceFormComponent = (function () {
-    function InvoiceFormComponent(service, snackBar, toasty) {
-        this.service = service;
-        this.snackBar = snackBar;
+    function InvoiceFormComponent(collections, toasty) {
+        this.collections = collections;
         this.toasty = toasty;
         this.data = {};
         this.payment = {};
@@ -24,13 +22,13 @@ var InvoiceFormComponent = (function () {
     }
     InvoiceFormComponent.prototype.save = function () {
         var data = {
+            _id: this._id,
             data: this.data,
             payment: this.payment,
             customer: this.customer,
             products: this.products
         };
-        this.service.post('invoices', data).subscribe(function (res) {
-            console.log(res);
+        this.collections.post('invoices', data).subscribe(function (res) {
         });
     };
     InvoiceFormComponent = __decorate([
@@ -38,10 +36,9 @@ var InvoiceFormComponent = (function () {
             moduleId: module.id,
             selector: 'invoice-form',
             templateUrl: 'invoice-form.component.html',
-            inputs: ['data', 'customer', 'payment', 'products'
-            ]
+            inputs: ['_id', 'data', 'customer', 'payment', 'products']
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.CollectionsService !== 'undefined' && services_1.CollectionsService) === 'function' && _a) || Object, material_1.MdSnackBar, ng2_toasty_1.ToastyService])
+        __metadata('design:paramtypes', [(typeof (_a = typeof services_1.CollectionsService !== 'undefined' && services_1.CollectionsService) === 'function' && _a) || Object, ng2_toasty_1.ToastyService])
     ], InvoiceFormComponent);
     return InvoiceFormComponent;
     var _a;

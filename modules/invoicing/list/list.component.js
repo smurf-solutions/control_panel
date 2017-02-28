@@ -14,8 +14,10 @@ var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
 var services_3 = require('@sys/services');
 var services_4 = require('@sys/services');
+var services_5 = require('@sys/services');
 var InvoicingConfig = require('./../invoicing.config.js');
 var edit_modal_component_js_1 = require('./../edit/edit-modal.component.js');
+var modals_1 = require('@sys/modals');
 var ListComponent = (function () {
     function ListComponent(app, collections, dialog, on, auth) {
         this.app = app;
@@ -28,11 +30,15 @@ var ListComponent = (function () {
         };
         this.listInfo = InvoicingConfig.listConfig;
         this.exportList = {};
+        this.filter = {
+            date: {},
+            number: {}
+        };
     }
     ListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.load();
         this.app.restore(this, 'invoicing.listInvoices');
+        this.load();
         this.onLoginChanged = this.on.loginChanged.subscribe(function (res) { return _this.load(); });
     };
     ListComponent.prototype.ngOnDestroy = function () {
@@ -42,24 +48,42 @@ var ListComponent = (function () {
     ListComponent.prototype.load = function () {
         var _this = this;
         this.selected = null;
+        var filterAnd = new services_5.QueryService;
+        filterAnd['$and'] = [{ 'data.date': this.filter.date }, { 'data.number': this.filter.number }];
         this.collections
-            .get('invoices')
+            .get('invoices', filterAnd.toString())
             .subscribe(function (res) { return _this.invoices = res.data; }, function (err) { return _this.invoices = []; });
     };
     ListComponent.prototype.editInvoiceModal = function (invoice) {
         var dialogRef = this.dialog.open(edit_modal_component_js_1.EditModalComponent, this.dialogConfig);
         if (invoice) {
-            dialogRef.componentInstance.title = 'Редакция на фактура';
+            dialogRef.componentInstance._id = invoice._id;
             dialogRef.componentInstance.invoice = invoice.data;
             dialogRef.componentInstance.customer = invoice.customer;
             dialogRef.componentInstance.payment = invoice.payment;
         }
         else {
-            dialogRef.componentInstance.title = 'Нова фактура';
+            dialogRef.componentInstance._id = 0;
             dialogRef.componentInstance.invoice = {};
             dialogRef.componentInstance.customer = { company: {}, address: {}, contacts: {} };
             dialogRef.componentInstance.payment = {};
         }
+        dialogRef.afterClosed().subscribe();
+    };
+    ListComponent.prototype.deleteInvoiceModal = function (invoice) {
+        var _this = this;
+        var dialogRef = this.dialog.open(modals_1.ConfirmModalComponent);
+        dialogRef.componentInstance.message = ['Invoice', '#', ': <b>', invoice.data.number + '</b><br>',
+            'Date', ': <b>' + invoice.data.date + '</b><br>',
+            'Customer', ': <b>' + invoice.customer.company.name + '</b>'];
+        dialogRef.componentInstance.icon = 'delete';
+        dialogRef.componentInstance.color = 'warn';
+        dialogRef.componentInstance.buttonOk = 'Delete';
+        dialogRef.afterClosed().subscribe(function (res) {
+            if (res == 'yes') {
+                _this.collections.remove('invoices', { _id: invoice._id }).subscribe(function (res) { }, function (err) { });
+            }
+        });
     };
     ListComponent.prototype.getPagesNum = function () {
         return Math.ceil(this.listInfo.founded / this.listInfo.perPage);

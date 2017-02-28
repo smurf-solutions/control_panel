@@ -22,9 +22,9 @@ module.exports = {
 			0 : null,
 			1 : null,
 			//2 : require('comporession')(),
-			3 : function( req,res,next ) { req.dbUrl = config.dbUrl;next() },
-			4 : function( req,res,next ) { req.dbPrefix = config.dbPrefix;next() },
-			5 : require("./REST/rest.middleware.js")
+			//3 : function( req,res,next ) { req.dbUrl = config.dbUrl;next() },
+			//4 : function( req,res,next ) { req.dbPrefix = config.dbPrefix;next() },
+			//5 : require("./REST/rest.middleware.js")
         }
     },
 	logLevel: "debug",

@@ -13,30 +13,21 @@ var core_2 = require('@angular/core');
 var services_1 = require('@sys/services');
 var services_2 = require('@sys/services');
 var services_3 = require('@sys/services');
+var services_4 = require('@sys/services');
+var services_5 = require('@sys/services');
 var AppComponent = (function () {
-    function AppComponent(auth, app, lang) {
+    function AppComponent(auth, app, lang, on, progress) {
         this.auth = auth;
         this.app = app;
         this.lang = lang;
-        this.title = 'Admin panel ';
+        this.on = on;
+        this.progress = progress;
+        this.title = 'Admin panel';
         this.Config = AppConfig;
         this.state = {};
-        this.progress = 0;
         this.app.layout = this;
         this.app.company = CompanyConfig;
-        this.initProgressBar();
     }
-    AppComponent.prototype.initProgressBar = function () {
-        var _this = this;
-        var XMLHttpRequest_originalOpen = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function () {
-            _this.progress++;
-            this.addEventListener('load', function () {
-                _this.progress--;
-            });
-            XMLHttpRequest_originalOpen.apply(this, arguments);
-        };
-    };
     AppComponent.prototype.getDbName = function () {
         var parser = document.createElement('a');
         parser.href = this.auth.dbUrl;
@@ -93,9 +84,9 @@ var AppComponent = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [(typeof (_c = typeof services_2.AuthService !== 'undefined' && services_2.AuthService) === 'function' && _c) || Object, (typeof (_d = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _d) || Object, (typeof (_e = typeof services_3.LanguageService !== 'undefined' && services_3.LanguageService) === 'function' && _e) || Object])
+        __metadata('design:paramtypes', [(typeof (_c = typeof services_2.AuthService !== 'undefined' && services_2.AuthService) === 'function' && _c) || Object, (typeof (_d = typeof services_1.SysService !== 'undefined' && services_1.SysService) === 'function' && _d) || Object, (typeof (_e = typeof services_3.LanguageService !== 'undefined' && services_3.LanguageService) === 'function' && _e) || Object, (typeof (_f = typeof services_4.EventsService !== 'undefined' && services_4.EventsService) === 'function' && _f) || Object, (typeof (_g = typeof services_5.ProgressService !== 'undefined' && services_5.ProgressService) === 'function' && _g) || Object])
     ], AppComponent);
     return AppComponent;
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 exports.AppComponent = AppComponent;

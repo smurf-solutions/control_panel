@@ -1,31 +1,31 @@
-<form style="width1:400px" >
+<form>
 	<div fxLayout="row" fxLayoutPosition="space-between center">
 		<md-input-container fxFlex> 
-			<input mdInput [(ngModel)]="data.number"   name="number"   type="number" placeholder="Номер" value="{{ number }}" autofocus>
+			<input mdInput [(ngModel)]="data.number"   name="number"   type="number" placeholder="{{ 'Number'|translate }}" value="{{ number }}" autofocus>
 		</md-input-container>
 		<span>&nbsp;&nbsp;&nbsp;</span>
 		<md-input-container fxFlex>
-			<input mdInput [(ngModel)]="data.date"     name="date"     type="date"   placeholder="Дата" value="{{ date }}">
+			<input mdInput [(ngModel)]="data.date"     name="date"     type="date"   placeholder="{{ 'Date'|translate }}" value="{{ date }}">
 		</md-input-container>
 	</div>
 	<div fxLayout>
 		<md-input-container fxFlex> 
-		<input mdInput [(ngModel)]="customer.company.name" name="customerCompanyName" type="text"   placeholder="Клиент" value="{{ customer.companyname }}" style="width:100%">
+		<input mdInput [(ngModel)]="customer.company.name" name="customerCompanyName" type="text"   placeholder="{{ 'Customer'|translate }}" value="{{ customer.companyname }}" style="width:100%">
 		</md-input-container>
 		<span class="suffix"><button md-icon-button color="primary"><md-icon>add_box</md-icon></button></span>
 	</div>
 	<div fxLayout="row">
 		<md-input-container fxFlex> 
-			<input mdInput [(ngModel)]="city"     name="city"     type="text"   placeholder="Град" value="{{ city }}">
+			<input mdInput [(ngModel)]="city"     name="city"     type="text"   placeholder="{{ 'Town'|translate }}" value="{{ city }}">
 			</md-input-container>
 		<span>&nbsp;&nbsp;&nbsp;</span>
 		<md-input-container fxFlex> 
-			<input mdInput [(ngModel)]="address"  name="address"  type="text"   placeholder="Адрес" value="{{ address }}">
+			<input mdInput [(ngModel)]="address"  name="address"  type="text"   placeholder="{{ 'Address'|translate }}" value="{{ address }}">
 			</md-input-container>
 	</div>
 	<div fxLayout="row">
 		<md-input-container fxFlex> 
-			<input mdInput [(ngModel)]="customer.contacts.phone"      name="phone"      type="text"   placeholder="Тел." value="{{ phone }}">
+			<input mdInput [(ngModel)]="customer.contacts.phone"      name="phone"      type="text"   placeholder="{{ 'Phone'|translate }}" value="{{ phone }}">
 			</md-input-container>
 		<span>&nbsp;&nbsp;&nbsp;</span>
 		<md-input-container fxFlex>
@@ -34,23 +34,23 @@
 	</div>
 	<div fxLayout="row">
 		<md-input-container fxFlex> 
-			<input mdInput [(ngModel)]="payment"  name="payment"  type="text"   placeholder="Начин на плащане" value="{{ payment }}">
+			<input mdInput [(ngModel)]="payment"  name="payment"  type="text"   placeholder="{{ 'Payment method'|translate }}" value="{{ payment }}">
 			</md-input-container>
 		<span>&nbsp;&nbsp;&nbsp;</span>
 		<md-input-container fxFlex> 
-			<input mdInput [(ngModel)]="data.date_pay" name="date_pay" type="date"   placeholder="Срок за плащане"value="{{ date_pay }}">
+			<input mdInput [(ngModel)]="data.date_pay" name="date_pay" type="date"   placeholder="{{ 'Payment period'|translate }}" value="{{ date_pay }}">
 			</md-input-container>
 	</div>
 	
 	<div fxLayout>
 		<md-input-container fxFlex>
-		<textarea mdInput [(ngModel)]="data.note" placeholder="Забележка" name="note" >{{ note }}</textarea>
+		<textarea mdInput [(ngModel)]="data.note" placeholder="{{ 'Note'|translate }}" name="note" >{{ note }}</textarea>
 		</md-input-container>
 	</div>
 	
 
 	<br>
 	<div align="right">
-		<button type="button" md-raised-button color="primary" (click)="save()">Save</button>
+		<button type="button" md-raised-button color="primary" (click)="save()" md-dialog-close>{{ 'Save'|translate }}</button>
 	</div>
 </form>
